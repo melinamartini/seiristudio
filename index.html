@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Fase de pruebas: evita que Google indexe la web. Quitar esta línea al lanzar. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Seiri · Estudio de gestión estratégica y operativa">
+<meta property="og:description" content="Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.">
+<meta name="theme-color" content="#263343">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Seiri · Estudio de gestión estratégica y operativa</title>
+<meta name="description" content="Diagnosticamos y diseñamos mejoras operativas para empresas de servicios que trabajan por proyectos. Implementamos procesos con tu equipo para reducir la dependencia de la dirección.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Concepto: bloques de color de la paleta (crema 45 · tinta 25 · vino 15 · cielo 10 · arena 5) que se alternan
+   con ritmo claro / color / oscuro. Tarjetas suaves, signos de orden ([ ], casillas, guion) como único adorno. */
+:root{
+  --crema:#F3E7D7; --crema-2:#FBF5EC; --tinta:#263343; --tinta-2:#33445A; --vino:#6B2138; --cielo:#B7D8F5; --cielo-2:#DCEBFA; --arena:#D8C2A6; --arena-2:#EADCC9;
+  --muted:#55606D; --line:rgba(38,51,67,.12);
+  --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-text:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --r-card:22px; --r-block:36px; --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  --shadow:0 1px 0 rgba(38,51,67,.05),0 18px 40px -24px rgba(38,51,67,.45);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:clip}
+body{margin:0;background:var(--crema);color:var(--tinta);font:400 1.0625rem/1.6 var(--f-text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.12;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .15 0 0 0 0 .2 0 0 0 0 .26 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--vino);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;line-height:1.04;margin:0;text-wrap:balance}
+p{margin:0}
+.br{color:var(--vino)}
+.hl{white-space:nowrap}
+.hl .br{display:inline-block;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.hl:hover .br:first-child{transform:translateX(-.08em)}.hl:hover .br:last-child{transform:translateX(.08em)}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:0}
+.lockup{font-family:var(--f-display);font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:baseline;gap:.3em;white-space:nowrap}
+.lockup .dash{width:.8em;height:2px;background:currentColor;align-self:center}
+.lockup .dash,.lockup .b{color:var(--acc,var(--vino))}
+.lockup em{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:1.12em;letter-spacing:0}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45em;min-height:48px;padding:.75em 1.4em;border-radius:999px;font:600 1rem/1.1 var(--f-text);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn .arr{transition:transform .18s ease}.btn:hover .arr{transform:translateX(3px)}
+.btn-vino{background:var(--vino);color:var(--crema);box-shadow:0 10px 24px -14px var(--vino)}
+.btn-tinta{background:var(--tinta);color:var(--crema)}
+.btn-crema{background:var(--crema);color:var(--tinta)}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-sm{min-height:40px;padding:.55em 1.05em;font-size:.94rem}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--crema) 88%,transparent);backdrop-filter:blur(10px)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.logo{font-family:var(--f-display);font-weight:800;font-size:1.4rem;letter-spacing:.03em;text-decoration:none}
+.nav{display:flex;gap:4px;align-items:center;margin-left:auto;margin-right:-.85em}
+.nav a{text-decoration:none;font-weight:500;padding:.5em .85em;border-radius:999px;transition:background .15s}
+.nav a:hover{background:var(--arena-2)}
+.menu-btn{display:none;background:var(--tinta);color:var(--crema);border:0;border-radius:999px;font:500 .9rem var(--f-mono);padding:.6em 1em;cursor:pointer}
+.mobile-panel{display:none}
+@media (max-width:960px){
+  .nav,.header-cta{display:none}.menu-btn{display:inline-flex}
+  .mobile-panel{position:absolute;left:var(--gut);right:var(--gut);top:100%;background:var(--crema-2);border-radius:var(--r-card);box-shadow:var(--shadow);padding:10px;display:grid;gap:2px}
+  .mobile-panel[hidden]{display:none}
+  .mobile-panel a{padding:.8em 1em;border-radius:14px;text-decoration:none;font-weight:600}
+  .mobile-panel a:hover{background:var(--arena-2)}
+}
+
+/* Hero */
+.hero{padding-block:clamp(36px,6vw,80px) clamp(56px,8vw,110px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,7.2vw,5.6rem);margin:18px 0 22px;font-weight:800}
+.hero .lede{font-size:clamp(1.15rem,1.8vw,1.35rem);line-height:1.5;color:var(--muted);max-width:36ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.chip-eyebrow{display:inline-flex;gap:.4em;align-items:center;background:var(--crema-2);border-radius:999px;padding:.45em .9em;box-shadow:0 0 0 1px var(--line)}
+.stage{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.stage .sheet{position:absolute;width:62%;padding:22px 24px;border-radius:26px;box-shadow:var(--shadow);display:grid;gap:12px}
+.stage .sheet .w{font-family:var(--f-serif);font-style:italic;font-size:clamp(2.2rem,4.4vw,3.2rem);line-height:.9}
+.stage .sheet ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:.88rem;font-weight:500}
+.stage .sheet li{display:inline-flex;gap:6px;align-items:center;padding:.3em .85em;border-radius:999px;background:rgba(255,255,255,.55)}
+.stage .s3 li{background:rgba(243,231,215,.14)}
+.stage .sheet li.ok::before{content:"";width:14px;height:14px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%236B2138' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.stage .s3 li.ok::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%23B7D8F5' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.s1{background:var(--cielo);left:0;top:4%;transform:rotate(-6deg);animation:float1 7s ease-in-out infinite}
+.s2{background:var(--arena);right:0;top:30%;transform:rotate(5deg);animation:float2 8s ease-in-out infinite;--fill:var(--arena)}
+.s3{background:var(--tinta);color:var(--crema);left:12%;bottom:0;transform:rotate(-2deg);animation:float3 9s ease-in-out infinite;--fill:var(--tinta)}
+.s3 .b{color:var(--cielo)}
+.stage .iso{position:absolute;right:-38px;top:50%;margin-top:-38px;width:76px;height:76px;transform:rotate(6deg);border:4px solid var(--crema);border-radius:50%;background:var(--vino);color:var(--crema);display:grid;place-items:center;font:800 1.6rem var(--f-display);box-shadow:var(--shadow)}
+.stage .iso .b{color:var(--cielo)}
+@keyframes float1{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-4deg) translateY(-10px)}}
+@keyframes float2{0%,100%{transform:rotate(5deg) translateY(0)}50%{transform:rotate(3deg) translateY(12px)}}
+@keyframes float3{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-3.5deg) translateY(-8px)}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.stage{max-width:420px}}
+@media (max-width:480px){.stage{aspect-ratio:auto;height:420px}.stage .sheet{width:74%}}
+
+/* Banda en movimiento */
+.ribbon{background:var(--vino);color:var(--crema);overflow:hidden;padding-block:16px;transform:rotate(-1.2deg);margin-block:-10px;position:relative;z-index:2}
+.ribbon .track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.ribbon span{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.3rem);padding-inline:.6em;white-space:nowrap}
+.ribbon span.b{font-family:var(--f-display);font-style:normal;color:var(--cielo);font-weight:700}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Propuestas: el selector protagonista */
+.propuestas{background:var(--tinta);color:var(--crema);padding-block:clamp(64px,8vw,100px) clamp(44px,5vw,64px)}
+.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(32px,4vw,52px)}
+.sec-head h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+.sec-head .lede{font-size:1.15rem;line-height:1.55;opacity:.85;max-width:56ch}
+.propuestas .eyebrow{color:var(--cielo)}
+.propuestas .br{color:var(--cielo)}
+.p-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.p-card{position:relative;border-radius:30px;padding:30px 28px 28px;display:grid;gap:14px;align-content:start;color:var(--tinta);transition:transform .25s ease,box-shadow .25s ease;min-height:420px}
+.p-card:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.p-card .big{font-family:var(--f-serif);font-style:italic;font-size:clamp(3rem,5.2vw,4.4rem);line-height:.85;margin-top:8px}
+.p-card .who{font-family:var(--f-display);font-weight:700;font-size:1.3rem;line-height:1.15}
+.p-card .txt{font-size:1rem;line-height:1.5}
+.p-card .go{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.p-empieza{background:var(--cielo);--acc:var(--vino)}
+.p-ordena{background:var(--arena);--acc:var(--vino)}
+.p-escala{background:var(--vino);color:var(--crema);--acc:var(--cielo)}
+.p-escala .lockup .b,.p-escala .lockup .dash{color:var(--cielo)}
+.p-card .btn{background:var(--tinta);color:var(--crema)}
+.p-escala .btn{background:var(--crema);color:var(--vino)}
+@media (min-width:901px){
+  .p-grid{grid-template-rows:repeat(5,auto)}
+  .p-card{grid-row:1/6;grid-template-rows:subgrid;min-height:0;row-gap:14px}
+  .p-card .go{align-self:end;margin-top:0;padding-top:10px}
+}
+@media (max-width:900px){.p-grid{grid-template-columns:1fr}.p-card{min-height:0}}
+
+/* Sub-navegación de universos */
+.unav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 66px);z-index:40;display:flex;justify-content:center;pointer-events:none;height:0}
+.unav .in{pointer-events:auto;display:flex;gap:6px;background:var(--tinta);padding:6px;border-radius:999px;box-shadow:var(--shadow);transform:translateY(10px);opacity:0;transition:opacity .25s,transform .25s;visibility:hidden}
+.unav.show .in{opacity:1;transform:translateY(14px);visibility:visible}
+.unav a{color:var(--crema);text-decoration:none;font-weight:600;font-size:.92rem;padding:.5em 1em;border-radius:999px;transition:background .2s,color .2s}
+.unav a[aria-current="true"]{background:var(--cielo);color:var(--tinta)}
+
+/* Universos */
+.uni{padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.uni-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end;margin-bottom:clamp(36px,4vw,56px)}
+.uni-head h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-top:16px}
+.uni-head .lockup{font-size:1.15rem}
+.gain{border-radius:var(--r-card);padding:22px 24px;display:grid;gap:8px}
+.gain .eyebrow{opacity:.75}
+.gain p{font-size:1.06rem;line-height:1.5}
+@media (max-width:860px){.uni-head{grid-template-columns:1fr}}
+
+.path{display:grid;gap:18px;margin-top:28px}
+.path-title{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.path-title h3{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:clamp(1.8rem,3.4vw,2.5rem);letter-spacing:0}
+.path-title .num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tinta);color:var(--crema)}
+.path-title .num svg{width:22px;height:22px}
+.lanes{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px}
+.lanes.even{grid-template-columns:1fr 1fr}
+.lanes.stack{grid-template-columns:1fr;gap:34px}
+.lanes.stack .cards{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card.wide .card-top{grid-area:top}.card.wide h4{grid-area:h}.card.wide .desc{grid-area:d}.card.wide .incl{grid-area:i}.card.wide .card-foot{grid-area:f}
+@media (min-width:900px){
+  .card.wide{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;grid-template-areas:"top i f" "h i f" "d i f";column-gap:36px;row-gap:10px;align-items:start}
+  .card.wide .incl{align-self:center;margin:0}
+  .card.wide .card-foot{flex-direction:column;align-items:flex-end;justify-content:center;align-self:stretch;border-top:0;border-left:1px dashed var(--line);padding:0 0 0 28px;margin:0}
+}
+.lane{display:grid;gap:14px;align-content:start}
+.lane-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.lane-h b{font-family:var(--f-display);font-size:1.05rem}
+.lane-h span{font-size:.92rem;color:var(--muted)}
+.lane-h .dot{width:10px;height:10px;border-radius:50%;background:var(--vino);align-self:center}
+.lane-h .dot.sq{border-radius:2px;background:var(--arena);box-shadow:inset 0 0 0 2px var(--tinta)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+@media (max-width:900px){.lanes,.lanes.even{grid-template-columns:1fr}}
+
+.card{background:var(--crema-2);border-radius:var(--r-card);padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;position:relative}
+.card:hover{transform:translateY(-4px)}
+.card-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:.3em .75em;font-weight:500}
+.t-serv{background:var(--vino);color:var(--crema)}
+.t-plan{background:var(--arena);color:var(--tinta)}
+.t-free{background:var(--cielo);color:var(--tinta)}
+.t-soon{background:transparent;box-shadow:inset 0 0 0 1.5px currentColor}
+.hint{font-family:var(--f-serif);font-style:italic;font-size:1.05rem;color:var(--vino)}
+.card h4{font-size:1.3rem;letter-spacing:-.01em;line-height:1.15}
+.card .desc{font-size:.98rem;line-height:1.5;color:var(--muted)}
+.incl{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px;font-size:.93rem}
+.incl li{display:flex;gap:10px;align-items:flex-start;line-height:1.35}
+.incl li::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:-.05em;background:var(--cielo-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%236B2138' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.price{font-family:var(--f-mono);font-size:1.2rem;font-weight:500;white-space:nowrap}
+.price small{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-right:4px}
+.link-btn{display:inline-flex;align-items:center;gap:.35em;min-height:40px;padding:.45em 1em;border-radius:999px;background:var(--tinta);color:var(--crema);text-decoration:none;font-weight:600;font-size:.92rem;transition:background .15s,transform .15s}
+.link-btn:hover{background:var(--vino);transform:translateX(2px)}
+
+/* Empieza */
+.u-empieza{background:var(--crema)}
+.u-empieza .gain{background:var(--cielo)}
+.job{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:22px;align-items:center;background:var(--cielo-2);border-radius:var(--r-block);padding:clamp(22px,3vw,36px)}
+.job .card{background:var(--crema-2)}
+.job p{color:var(--muted);max-width:40ch}
+@media (max-width:860px){.job{grid-template-columns:1fr}}
+.calc-cta{margin-top:30px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;background:var(--cielo);border-radius:var(--r-block);padding:clamp(24px,3vw,36px);position:relative;overflow:hidden}
+.calc-cta .ic{width:76px;height:76px;border-radius:22px;background:var(--crema-2);display:grid;place-items:center;color:var(--vino);box-shadow:var(--shadow)}
+.calc-cta .ic svg{width:40px;height:40px}
+.calc-cta h3{font-size:clamp(1.5rem,2.6vw,2rem);margin:8px 0 6px}
+.calc-cta p{max-width:58ch}
+.calc-cta::after{content:"[ ]";position:absolute;right:-10px;bottom:-40px;font:800 9rem/1 var(--f-display);color:rgba(38,51,67,.07);pointer-events:none}
+@media (max-width:760px){.calc-cta{grid-template-columns:1fr}.calc-cta .btn{justify-self:start}}
+
+/* Ordena */
+.u-ordena{background:var(--arena-2)}
+.u-ordena .gain{background:var(--crema-2)}
+.soon-row{margin-top:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:var(--crema-2);border-radius:var(--r-card);padding:18px 22px;box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.15)}
+.soon-row b{font-family:var(--f-display);font-size:1.15rem}
+.soon-row p{color:var(--muted);flex:1 1 280px}
+
+/* Escala */
+.u-escala{background:var(--tinta);color:var(--crema)}
+.u-escala .br{color:var(--cielo)}
+.u-escala .lockup .b,.u-escala .lockup .dash{color:var(--cielo)}
+.u-escala .gain{background:var(--tinta-2)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;position:relative}
+.steps::before{content:"";position:absolute;left:8%;right:8%;top:23px;height:2px;background:repeating-linear-gradient(90deg,var(--cielo) 0 10px,transparent 10px 18px);opacity:.6}
+.step{display:grid;gap:14px;align-content:start;position:relative}
+.step .dot{width:48px;height:48px;border-radius:50%;background:var(--cielo);color:var(--tinta);display:grid;place-items:center;font:700 .95rem var(--f-mono);box-shadow:0 0 0 8px var(--tinta)}
+.step .verb{font-family:var(--f-serif);font-style:italic;font-size:2rem;line-height:1;color:var(--cielo)}
+.step .what{color:#D9D1C5;font-size:.98rem;line-height:1.5;min-height:4.5em}
+.u-escala .card{background:var(--crema-2);color:var(--tinta)}
+.kit-row{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;background:var(--tinta-2);border-radius:var(--r-card);padding:22px 24px}
+.kit-row h4{font-size:1.25rem;margin:6px 0 4px}
+.kit-row p{color:#D9D1C5}
+.kit-row .incl li::before{background:rgba(183,216,245,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%23B7D8F5' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.kit-row .incl{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:10px;color:var(--crema)}
+.kit-row .side{display:grid;gap:10px;justify-items:end}
+.kit-row .link-btn{background:var(--cielo);color:var(--tinta)}
+@media (max-width:860px){.steps{grid-template-columns:1fr}.steps::before{left:23px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--cielo) 0 10px,transparent 10px 18px)}.step{padding-left:0}.step .what{min-height:0}.kit-row{grid-template-columns:1fr}.kit-row .side{justify-items:start}}
+
+/* Apoyo */
+.apoyo{padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.apoyo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ap{border-radius:var(--r-card);padding:24px 22px;display:grid;gap:12px;align-content:start;min-height:230px;transition:transform .2s}
+.ap:hover{transform:translateY(-4px) rotate(.4deg)}
+.ap .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.55)}
+.ap .ic svg{width:28px;height:28px}
+.ap h3{font-size:1.3rem;line-height:1.15}
+.ap p{font-size:.98rem;line-height:1.5}
+.ap1{background:var(--cielo)}.ap2{background:var(--arena)}.ap3{background:var(--vino);color:var(--crema)}.ap3 .ic{background:rgba(243,231,215,.15)}.ap4{background:var(--tinta);color:var(--crema)}.ap4 .ic{background:rgba(243,231,215,.12)}
+.apoyo .close{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.apoyo .close p{font-family:var(--f-display);font-weight:700;font-size:clamp(1.4rem,2.6vw,2rem)}
+@media (max-width:960px){.apoyo-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.apoyo-grid{grid-template-columns:1fr}.ap{min-height:0}}
+
+/* Sobre */
+.sobre{background:var(--crema-2);padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.sobre .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.motto{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1;letter-spacing:-.025em}
+.motto .bk{color:var(--vino);display:inline-block;letter-spacing:.06em;transition:letter-spacing .4s ease}
+.motto:hover .bk{letter-spacing:.35em}
+.sobre .sobre-tag{grid-column:1/-1}
+.sobre .wrap{row-gap:18px}
+.sobre .text{display:grid;gap:16px;font-size:1.06rem;line-height:1.6;color:var(--muted);text-align:justify;hyphens:none;-webkit-hyphens:none;overflow-wrap:normal;word-break:normal;text-wrap:pretty}
+.sobre .text p{padding-top:.35em}
+@media (max-width:640px){.sobre .text{text-align:left}}
+.sobre .text strong{color:var(--tinta)}
+.stack3{display:grid;margin-top:34px}
+.st{border-radius:20px;padding:18px 22px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:center;box-shadow:var(--shadow)}
+.st + .st{margin-top:-6px}
+.st b{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:1.8rem;line-height:1}
+.st:nth-child(1){background:var(--cielo);transform:rotate(-1.2deg)}
+.st:nth-child(2){background:var(--arena);transform:rotate(.8deg) translateX(14px)}
+.st:nth-child(3){background:var(--tinta);color:var(--crema);transform:rotate(-.6deg)}
+@media (max-width:860px){.sobre .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.st{grid-template-columns:1fr;gap:4px}.st:nth-child(2){transform:rotate(.8deg)}}
+
+/* Contacto */
+.contacto{background:var(--vino);color:var(--crema);padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px);position:relative;overflow:hidden}
+.contacto::before{content:"[";position:absolute;left:-30px;top:-60px;font:800 26rem/1 var(--f-display);color:rgba(243,231,215,.06);pointer-events:none}
+.contacto .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start;position:relative}
+.contacto h2{font-size:clamp(2.2rem,4.4vw,3.8rem)}
+@media (max-width:860px){.contacto .wrap{grid-template-columns:1fr}}
+.contacto .br{color:var(--cielo)}
+.contacto .eyebrow{color:var(--cielo)}
+.contacto .lead{font-size:1.15rem;line-height:1.55;opacity:.9;margin-top:18px;max-width:40ch}
+.mail-line{margin-top:28px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:var(--f-mono)}
+.mail-line code{font:inherit;background:rgba(243,231,215,.12);padding:.45em .8em;border-radius:999px;user-select:all}
+.copy{font:500 .8rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--crema);border:1.5px solid rgba(243,231,215,.5);border-radius:999px;padding:.5em .9em;cursor:pointer}
+.form{background:var(--crema);color:var(--tinta);border-radius:30px;padding:clamp(22px,3vw,34px);display:grid;gap:18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.form fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+.form legend,.form label.lb{font-weight:600;font-size:.98rem;padding:0;margin-bottom:2px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:inline-flex;align-items:center;gap:.4em;min-height:44px;padding:.5em 1em;border-radius:999px;background:var(--crema-2);box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.2);cursor:pointer;font-weight:500;transition:background .15s,box-shadow .15s,color .15s}
+.opt span em{font-family:var(--f-serif);font-size:1.15em}
+.opt input:checked + span{background:var(--tinta);color:var(--crema);box-shadow:none}
+.opt input:focus-visible + span{outline:3px solid var(--vino);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.field{display:grid;gap:6px}
+.field input,.field select,.field textarea{width:100%;font:400 1rem var(--f-text);color:var(--tinta);background:var(--crema-2);border:0;box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.2);border-radius:14px;padding:.8em .95em;min-height:48px}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:inset 0 0 0 2px var(--vino)}
+.field .opt-note{font-weight:400;color:var(--muted);font-size:.88rem}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--muted);line-height:1.45}
+.consent input{width:20px;height:20px;accent-color:var(--vino);margin-top:1px;flex:none}
+.err{color:#9B1C1C;font-size:.9rem;min-height:0}
+.err:empty{display:none}
+.pending{font-size:.85rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.pending::before{content:"";width:8px;height:8px;border-radius:50%;background:#C08A2B;margin-top:.45em;flex:none}
+.ready{background:var(--cielo-2);border-radius:20px;padding:18px;display:grid;gap:10px}
+.ready pre{margin:0;white-space:pre-wrap;font:400 .9rem/1.5 var(--f-mono);background:var(--crema-2);border-radius:12px;padding:12px;max-height:200px;overflow:auto}
+.ready .row{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Footer */
+.footer{background:var(--tinta);color:var(--crema);padding-block:60px 30px}
+.f-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(2,minmax(0,1fr));gap:30px}
+.footer .logo .b{color:var(--cielo)}
+.footer p{opacity:.8;margin-top:12px;max-width:34ch}
+.footer h4{font-family:var(--f-mono);font-weight:400;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:12px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.footer a{text-decoration:none}.footer a:hover{color:var(--cielo)}
+.legal{margin-top:50px;padding-top:18px;border-top:1px solid rgba(243,231,215,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+@media (max-width:760px){.f-grid{grid-template-columns:1fr 1fr}.f-grid>div:first-child{grid-column:1/-1}}
+
+/* Vista calculadora */
+.calc-page{padding-block:clamp(36px,5vw,70px) clamp(70px,8vw,110px)}
+.back{display:inline-flex;align-items:center;gap:.4em;text-decoration:none;font-weight:600;padding:.5em 1em;border-radius:999px;background:var(--crema-2);box-shadow:inset 0 0 0 1.5px var(--line)}
+.calc-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin:26px 0 36px}
+.calc-hero h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;margin-top:14px}
+.calc-hero .lede{font-size:1.2rem;line-height:1.5;color:var(--muted);max-width:48ch;margin-top:16px}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:start}
+.calc>*,.qf{min-width:0}
+.calc-in{background:var(--cielo);border-radius:var(--r-block);padding:clamp(22px,3vw,34px);display:grid;gap:18px}
+.qf{background:var(--crema-2);border-radius:22px;padding:18px 20px;display:grid;gap:8px}
+.qf label{font-weight:700;font-family:var(--f-display);font-size:1.12rem;line-height:1.25;display:flex;gap:10px}
+.qf label .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--tinta);color:var(--crema);display:grid;place-items:center;font:500 .85rem var(--f-mono)}
+.qf .help{font-size:.92rem;color:var(--muted);line-height:1.45;padding-left:38px}
+.qf .inp{display:flex;align-items:center;gap:8px;margin-left:38px;background:var(--crema);border-radius:14px;box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.2);padding-right:14px;max-width:240px}
+.qf .inp:focus-within{box-shadow:inset 0 0 0 2px var(--vino)}
+.qf input{flex:1;min-width:0;width:100%;border:0;background:transparent;font:500 1.3rem var(--f-mono);color:var(--tinta);padding:.55em .8em;font-variant-numeric:tabular-nums}
+.qf input:focus{outline:none}
+.qf .u{font-family:var(--f-mono);color:var(--muted)}
+.qf .err{padding-left:38px}
+.calc-out{background:var(--tinta);color:var(--crema);border-radius:var(--r-block);padding:clamp(22px,3vw,34px);display:grid;gap:18px;position:sticky;top:100px}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.res{background:var(--tinta-2);border-radius:20px;padding:16px 18px;display:grid;gap:4px}
+.res.main{grid-column:1/-1;background:var(--cielo);color:var(--tinta)}
+.res .k{font-size:.9rem;opacity:.85}
+.res .v{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,3.4vw,2.4rem);line-height:1.05;font-variant-numeric:tabular-nums}
+.res.main .v{font-size:clamp(2.6rem,6vw,3.8rem)}
+.msgs{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:1rem;line-height:1.5}
+.msgs li{display:flex;gap:10px}
+.msgs li::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:.1em;background:rgba(183,216,245,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.4' fill='none' stroke='%23B7D8F5' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.msgs b{color:var(--cielo)}
+.note-box{background:rgba(243,231,215,.08);border-radius:16px;padding:14px 16px;font-size:.95rem;line-height:1.5}
+.foot-note{font-size:.88rem;opacity:.75;line-height:1.5}
+.calc-next{margin-top:26px;background:var(--arena);border-radius:var(--r-block);padding:clamp(22px,3vw,32px);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.calc-next h3{font-size:clamp(1.3rem,2.4vw,1.7rem)}
+@media (max-width:900px){.calc{grid-template-columns:1fr}.calc-out{position:static}.calc-hero{grid-template-columns:1fr}}
+@media (max-width:420px){.res-grid{grid-template-columns:1fr}.qf .help,.qf .err{padding-left:0}.qf .inp{margin-left:0;max-width:none}}
+
+
+/* Tarjetas parejas: misma altura por fila */
+@media (min-width:901px){
+  .lanes.even{grid-template-rows:auto 1fr 1fr;row-gap:14px}
+  .lanes.even .lane{grid-row:1/4;display:grid;grid-template-rows:subgrid;gap:14px}
+}
+@media (min-width:861px){
+  .steps{grid-template-rows:auto auto auto 1fr;row-gap:14px}
+  .step{grid-row:1/5;display:grid;grid-template-rows:subgrid}
+}
+
+/* Testimonios (plantilla: completar solo con testimonios reales y autorizados) */
+.testi{background:var(--cielo-2);padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.testi .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,44px)}
+.t-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.t-card{position:relative;background:var(--crema-2);border-radius:28px;padding:34px 28px 26px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow);transition:transform .2s}
+.t-card:hover{transform:translateY(-4px)}
+.t-card:nth-child(2){background:var(--tinta);color:var(--crema)}
+.t-card::before{content:"\201C";position:absolute;top:6px;right:24px;font:400 6.5rem/1 var(--f-serif);color:var(--vino);pointer-events:none}
+.t-card:nth-child(2)::before{color:var(--cielo)}
+.t-card blockquote{margin:0;font-family:var(--f-serif);font-style:italic;font-size:1.3rem;line-height:1.35}
+.t-who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.t-card:nth-child(2) .t-who{border-color:rgba(243,231,215,.2)}
+.t-av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:800 1.1rem var(--f-display);background:var(--cielo);color:var(--tinta);flex:none}
+.t-card:nth-child(2) .t-av{background:var(--vino);color:var(--crema)}
+.t-who b{display:block;font-family:var(--f-display);font-size:1.05rem}
+.t-who > span > span{display:block;font-size:.9rem;opacity:.8}
+.t-u{font-size:.8rem}
+.placeholder .t-card{outline:2px dashed rgba(38,51,67,.25);outline-offset:-10px}
+.placeholder .t-card blockquote{opacity:.75}
+.placeholder .t-card:nth-child(2){outline-color:rgba(243,231,215,.3)}
+.t-card:nth-child(2) .lockup .b,.t-card:nth-child(2) .lockup .dash{color:var(--cielo)}
+@media (min-width:901px){.t-grid{grid-template-rows:auto 1fr auto}.t-card{display:grid;grid-row:1/4;grid-template-rows:subgrid;row-gap:18px}.t-card .t-who{margin-top:0;align-self:start}}
+@media (max-width:900px){.t-grid{grid-template-columns:1fr}}
+
+/* ===== Ajustes de contenido y claridad ===== */
+.hero h1.h1-3{font-size:clamp(2rem,3.7vw,3.2rem);line-height:1.08}
+.hero h1.h1-3 .ln{display:block;white-space:nowrap}
+@media (max-width:860px){.hero h1.h1-3{font-size:clamp(1.6rem,7.2vw,3.1rem)}}
+.p-note{margin-top:28px;font-size:1.05rem;color:var(--crema);opacity:.9;text-align:center}
+.p-note .br{color:var(--cielo)}
+.note{font-size:.88rem;line-height:1.45;color:var(--muted);background:var(--cielo-2);border-radius:12px;padding:9px 12px}
+.kit-row .note{background:rgba(243,231,215,.08);color:#D9D1C5;margin-top:12px;display:inline-block}
+.sub-name{display:block;font-family:var(--f-mono);font-weight:400;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vino);margin-top:6px}
+.esc-intro{font-size:1.1rem;line-height:1.5;color:#E3DACD;max-width:62ch;margin:-12px 0 32px}
+.esc-close{margin-top:22px;font-size:.98rem;color:#D9D1C5}
+.u-escala .steps::before{display:none}
+.step .dot svg{width:22px;height:22px}
+.como{background:var(--arena-2);padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.como-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.como-steps li{background:var(--crema-2);border-radius:var(--r-card);padding:24px 22px;display:grid;gap:10px;align-content:start;box-shadow:var(--shadow)}
+.como-steps .n{width:44px;height:44px;border-radius:50%;background:var(--vino);color:var(--crema);display:grid;place-items:center;font:700 1.05rem var(--f-display)}
+.como-steps h3{font-size:1.3rem;line-height:1.15}
+.como-steps p{color:var(--muted);font-size:1rem;line-height:1.5}
+.como-note{margin-top:22px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--muted)}
+@media (max-width:860px){.como-steps{grid-template-columns:1fr}}
+.faq{padding-block:clamp(60px,7vw,92px) clamp(44px,5vw,64px)}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(24px,4vw,56px);align-items:start}
+.faq .sec-head{margin:0}
+.faq-list{display:grid;gap:10px}
+.faq-item{background:var(--crema-2);border-radius:18px;box-shadow:0 0 0 1px var(--line)}
+.faq-q{margin:0;font-size:inherit;letter-spacing:0}
+.faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:none;border:0;cursor:pointer;padding:18px 20px;font:700 1.08rem/1.3 var(--f-display);color:var(--tinta);border-radius:18px;min-height:56px}
+.faq-btn:hover{color:var(--vino)}
+.faq-ic{flex:none;width:28px;height:28px;border-radius:50%;background:var(--cielo);position:relative;transition:transform .2s ease,background .2s}
+.faq-ic::before,.faq-ic::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--tinta);transform:translate(-50%,-50%)}
+.faq-ic::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s ease}
+.faq-btn[aria-expanded="true"] .faq-ic{background:var(--vino)}
+.faq-btn[aria-expanded="true"] .faq-ic::before,.faq-btn[aria-expanded="true"] .faq-ic::after{background:var(--crema)}
+.faq-btn[aria-expanded="true"] .faq-ic::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-a{padding:0 20px 18px}
+.faq-a p{color:var(--muted);line-height:1.55;max-width:64ch}
+@media (max-width:860px){.faq .wrap{grid-template-columns:1fr}}
+.calc-name{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vino);margin-top:14px}
+
+[hidden]{display:none!important}
+.t-card.ph blockquote{padding-right:36px}
+/* ===================== v3 · una página, un público ===================== */
+/* Etapas con el color de los antiguos universos: Audit = cielo · Method = arena · Sprint = tinta */
+.pend{font-family:var(--f-mono);font-size:.82em;font-weight:500;letter-spacing:0;color:var(--vino);background:rgba(107,33,56,.07);border:1.5px dashed rgba(107,33,56,.45);border-radius:8px;padding:.08em .45em;font-style:normal;white-space:normal;text-transform:none}
+.on-dark .pend,.proceso .pend,.contacto .pend,.footer .pend{color:var(--cielo);background:rgba(183,216,245,.1);border-color:rgba(183,216,245,.5)}
+.contacto .form .pend{color:var(--vino);background:rgba(107,33,56,.07);border-color:rgba(107,33,56,.45)}
+.header-cta{margin-left:10px}
+.site-header .nav{margin-right:0}
+
+/* Portada */
+.hero h1.h1-v3{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1.04}
+.hero h1.h1-v3 .sub{display:block;margin-top:.35em;font-size:.6em;font-weight:600;line-height:1.15;color:var(--muted);letter-spacing:-.01em}
+.hero .lede{max-width:44ch}
+.stage .sheet .w{letter-spacing:0}
+
+/* ¿Te suena? (bloque oscuro) */
+.suena{background:var(--tinta);color:var(--crema);padding-block:clamp(64px,8vw,100px) clamp(52px,6vw,80px)}
+.suena .eyebrow,.suena .br{color:var(--cielo)}
+.pain-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pain{border-radius:26px;padding:24px 22px 26px;display:grid;gap:22px;align-content:start;color:var(--tinta);min-height:210px;transition:transform .25s ease,box-shadow .25s ease}
+.pain:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.pain .box{width:28px;height:28px;border-radius:8px;box-shadow:inset 0 0 0 2px currentColor;opacity:.75}
+.pain p{font-family:var(--f-display);font-weight:700;font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.2;letter-spacing:-.01em}
+.pain:nth-child(1){background:var(--cielo)}
+.pain:nth-child(2){background:var(--arena)}
+.pain:nth-child(3){background:var(--crema-2)}
+.pain:nth-child(4){background:var(--vino);color:var(--crema)}
+.pain-close{margin-top:34px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
+.pain-close p{font-size:1.15rem;line-height:1.55;opacity:.9;max-width:46ch}
+.pain-close .pain-q{font-family:var(--f-serif);font-style:italic;font-size:clamp(2rem,4.2vw,3.3rem);line-height:1;color:var(--cielo);text-align:right}
+@media (max-width:960px){.pain-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.pain-close{grid-template-columns:1fr}.pain-q{text-align:left}}
+@media (max-width:480px){.pain-grid{grid-template-columns:1fr}.pain{min-height:0}}
+
+/* Lo que logras */
+.logras{background:var(--arena-2);padding-block:clamp(60px,7vw,92px) clamp(52px,6vw,80px)}
+.logras .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.logras .sec-head{margin-bottom:0}
+.logras .eyebrow{color:var(--vino)}
+.logras-final{font-size:1.12rem;line-height:1.55;color:var(--muted);max-width:44ch;margin-top:22px}
+.logras .stack3{margin-top:0}
+@media (max-width:860px){.logras .wrap{grid-template-columns:1fr}}
+
+/* El proceso */
+.proceso{background:var(--tinta);color:var(--crema);padding-block:clamp(64px,8vw,100px) clamp(52px,6vw,80px)}
+.proceso .eyebrow,.proceso .br{color:var(--cielo)}
+.p-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.p-steps::before{content:"";position:absolute;left:4%;right:10%;top:23px;height:2px;background:repeating-linear-gradient(90deg,var(--cielo) 0 10px,transparent 10px 18px);opacity:.45}
+.p-step{display:grid;gap:12px;align-content:start;position:relative}
+.p-step .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font:500 .9rem var(--f-mono);box-shadow:0 0 0 8px var(--tinta)}
+.p-step .verb{font-family:var(--f-serif);font-style:italic;font-size:2rem;line-height:1}
+.p-step .what{color:#D9D1C5;font-size:.98rem;line-height:1.5}
+.p-step .to-svc{justify-self:start;align-self:start;font:500 .72rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;border:0;border-radius:999px;padding:.55em .95em;cursor:pointer;min-height:36px;display:inline-flex;align-items:center;gap:.4em;transition:transform .15s}
+.p-step .to-svc:hover{transform:translateX(2px)}
+.p-step.a .dot{background:var(--cielo);color:var(--tinta)}
+.p-step.a .verb{color:var(--cielo)}
+.p-step.a .to-svc{background:var(--cielo);color:var(--tinta)}
+.p-step.m .dot{background:var(--arena);color:var(--tinta)}
+.p-step.m .verb{color:var(--arena)}
+.p-step.m .to-svc{background:var(--arena);color:var(--tinta)}
+.p-step.s .dot{background:var(--tinta);color:var(--crema);border:2px solid var(--crema)}
+.p-step.s .verb{color:var(--crema)}
+.p-step.s .to-svc{background:transparent;color:var(--crema);box-shadow:inset 0 0 0 1.5px var(--crema)}
+@media (min-width:1101px){
+  .p-steps{grid-template-rows:auto auto 1fr auto;row-gap:12px}
+  .p-step{grid-row:1/5;grid-template-rows:subgrid}
+}
+@media (max-width:1100px) and (min-width:761px){.p-steps{grid-template-columns:1fr 1fr;row-gap:40px}.p-steps::before{display:none}}
+@media (max-width:760px){.p-steps{grid-template-columns:1fr;gap:30px}.p-steps::before{display:none}}
+.franja{margin-top:clamp(36px,4vw,52px);background:var(--cielo);color:var(--tinta);border-radius:var(--r-block);padding:clamp(22px,3vw,32px) clamp(22px,3vw,36px);display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap;font-family:var(--f-display);font-weight:700;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.25;letter-spacing:-.01em;position:relative;overflow:hidden}
+.franja b{color:var(--vino);font-weight:800}
+.franja::after{content:"[ ]";position:absolute;right:-6px;bottom:-34px;font:800 7rem/1 var(--f-display);color:rgba(38,51,67,.08);pointer-events:none}
+.franja span{position:relative;z-index:1;max-width:64ch}
+.p-note{color:#D9D1C5;opacity:1;text-align:left;font-size:.98rem;margin-top:18px}
+
+/* Servicios */
+.servicios{background:var(--crema);padding-block:clamp(64px,8vw,100px) clamp(52px,6vw,80px)}
+.servicios .eyebrow{color:var(--vino)}
+.guide{display:grid;gap:12px;margin-bottom:clamp(26px,3vw,38px);background:var(--crema-2);border-radius:var(--r-card);padding:18px 20px;box-shadow:0 0 0 1px var(--line)}
+.guide-k{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vino)}
+.g-pills{display:flex;flex-wrap:wrap;gap:8px}
+.g-pill{font:500 1rem var(--f-text);color:var(--tinta);min-height:44px;padding:.5em 1.05em;border-radius:999px;border:0;background:var(--crema);box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.2);cursor:pointer;transition:background .15s,color .15s,box-shadow .15s}
+.g-pill:hover{box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.g-pill[aria-pressed="true"]{background:var(--tinta);color:var(--crema);box-shadow:none}
+.g-res{font-size:1rem;color:var(--muted);min-height:1.6em}
+.g-res b{color:var(--tinta);font-family:var(--f-display)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc-grid .card{gap:12px;padding:24px 24px 20px;transition:transform .2s ease,box-shadow .2s ease,opacity .25s ease,outline-color .2s}
+.svc-grid .card{outline:3px solid transparent;outline-offset:4px}
+.svc-grid.has-pick .card:not(.pick){opacity:.55}
+.svc-grid .card.pick{outline-color:var(--vino)}
+.t-a{background:var(--cielo);color:var(--tinta)}
+.t-m{background:var(--arena);color:var(--tinta)}
+.t-s{background:var(--tinta);color:var(--crema)}
+.svc-grid .card h4{font-size:1.4rem}
+.svc-grid .sub-name{margin-top:8px}
+.c-lead{font-family:var(--f-display);font-weight:700;font-size:1.08rem;line-height:1.3}
+.c-fit{font-size:.95rem;line-height:1.5;color:var(--muted)}
+.c-fit b{color:var(--tinta);font-weight:600}
+.c-incl{display:grid;gap:8px;align-content:start}
+.c-incl .k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.c-note:empty{display:none;background:none;padding:0}
+.c-meta{font-size:.92rem;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.c-meta .k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.c-meta b{font-weight:600}
+.svc-grid .card-foot{align-items:center}
+@media (min-width:1001px){
+  .svc-grid{grid-template-rows:repeat(8,auto)}
+  .svc-grid .card{display:grid;grid-row:span 8;grid-template-rows:subgrid;row-gap:12px}
+  .c-note:empty{display:block}
+}
+@media (max-width:1000px){.svc-grid{grid-template-columns:1fr;max-width:640px}}
+.rutas{margin-top:clamp(30px,4vw,44px);background:var(--arena-2);border-radius:var(--r-block);padding:clamp(22px,3vw,34px);display:grid;gap:18px}
+.rutas h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+.ruta-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ruta-list li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:10px 20px;align-items:center;background:var(--crema-2);border-radius:18px;padding:14px 18px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.chain .tag{font-size:.74rem}
+.chain .ar{color:var(--vino);font-weight:700}
+.ruta-list p{font-size:.98rem;line-height:1.45}
+.ruta-list .dur{font-family:var(--f-mono);font-size:.9rem;white-space:nowrap;color:var(--vino)}
+.rutas .r-note{font-size:.95rem;color:var(--muted)}
+@media (max-width:760px){.ruta-list li{grid-template-columns:1fr;gap:6px}}
+
+/* ¿Es para ti? */
+.para{background:var(--cielo-2);padding-block:clamp(60px,7vw,92px) clamp(52px,6vw,80px)}
+.para .eyebrow{color:var(--vino)}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fit-card{border-radius:var(--r-card);padding:24px 24px 22px;display:grid;gap:14px;align-content:start}
+.fit-card h3{font-size:1.3rem}
+.fit-yes{background:var(--crema-2);box-shadow:var(--shadow)}
+.fit-no{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.22)}
+.no-list{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:8px;font-size:.98rem}
+.no-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.4;color:var(--muted)}
+.no-list li::before{content:"";width:20px;height:20px;border-radius:50%;flex:none;margin-top:-.02em;background:var(--crema-2) linear-gradient(var(--tinta),var(--tinta)) center/9px 2px no-repeat;box-shadow:inset 0 0 0 1.5px rgba(38,51,67,.25)}
+.fit-yes .incl{font-size:.98rem}
+@media (max-width:760px){.fit-grid{grid-template-columns:1fr}}
+
+/* Testimonios v3: sin lockup */
+@media (min-width:901px){.t-grid{grid-template-rows:1fr auto}.t-card{grid-row:1/3}}
+.t-card.ph{outline:2px dashed rgba(38,51,67,.25);outline-offset:-10px}
+.t-card.ph::before{opacity:.35}
+
+/* Contacto v3 */
+.form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23263343' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:42px}
+.field .help{font-size:.88rem;color:var(--muted);line-height:1.4}
+.copy[disabled]{opacity:.5;cursor:not-allowed}
+.ready p{font-size:.95rem;color:var(--muted)}
+.wa-float{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:none;align-items:center;gap:8px;background:var(--vino);color:var(--crema);text-decoration:none;font-weight:600;padding:.8em 1.1em;border-radius:999px;box-shadow:0 14px 30px -12px rgba(38,51,67,.7);min-height:52px}
+.wa-float svg{width:22px;height:22px}
+@media (max-width:760px){.wa-float{display:inline-flex}.footer{padding-bottom:96px}}
+
+/* Pie */
+.social{display:flex;gap:10px;margin-top:20px}
+.soc{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--crema);box-shadow:inset 0 0 0 1.5px rgba(243,231,215,.35);transition:background .15s,color .15s,transform .15s}
+.soc:hover{background:var(--cielo);color:var(--tinta)!important;transform:translateY(-2px)}
+.soc svg{width:21px;height:21px}
+.footer .tagline{opacity:.85;margin-top:12px;max-width:36ch}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* Ajustes 14 oct · revisión editorial */
+.logras-k{margin-top:22px;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.logras-list{margin-top:12px;font-size:1rem;max-width:46ch}
+.price-q{font-size:.88rem;color:var(--muted);max-width:20ch;line-height:1.3}
+.svc-grid .c-note{font-size:.9rem}
+@media (min-width:901px){.t-grid.t-two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}}
+.hero .chip-eyebrow{background:var(--vino);color:var(--crema);box-shadow:0 10px 24px -14px var(--vino)}
+.hero .chip-eyebrow .br{color:var(--cielo)}
+/* Hojas de portada: estáticas, ordenadas y sin superponerse */
+.stage{aspect-ratio:auto;height:auto;display:flex;flex-direction:column;gap:14px;max-width:460px}
+.stage .sheet{position:relative;inset:auto;width:84%;animation:none}
+.stage .s1{align-self:flex-start;transform:rotate(-1.5deg)}
+.stage .s2{align-self:flex-end;transform:rotate(1.2deg)}
+.stage .s3{align-self:center;transform:rotate(-.8deg)}
+.stage .iso{right:-30px}
+@media (max-width:480px){.stage{height:auto}.stage .sheet{width:88%}.stage .iso{right:-14px;width:64px;height:64px;margin-top:-32px}}
+.hero h1.h1-v3 .sub{font-size:.52em;text-wrap:balance;max-width:36ch}
+/* ¿Te suena? · tarjetas con título y descripción */
+.pain{position:relative;overflow:hidden;gap:12px;padding:26px 22px 24px;min-height:0}
+.pain .pain-mark{position:absolute;right:14px;top:6px;font:800 2.6rem/1 var(--f-display);letter-spacing:.04em;color:var(--vino);opacity:.22;pointer-events:none}
+.pain:nth-child(4) .pain-mark{color:var(--cielo);opacity:.4}
+.pain p.pain-t{font-family:var(--f-display);font-weight:700;font-size:clamp(1.12rem,1.5vw,1.28rem);line-height:1.2;letter-spacing:-.01em;padding-right:44px}
+.pain p.pain-d{font-family:var(--f-text);font-weight:400;font-size:.98rem;line-height:1.5;letter-spacing:0;opacity:.85}
+@media (min-width:961px){.pain-grid{grid-template-rows:auto 1fr}.pain{display:grid;grid-row:span 2;grid-template-rows:subgrid;align-content:start}}
+.suena .sec-head{max-width:1000px}
+.pain .pain-mark{font-size:2rem;right:12px;top:8px}
+.pain p.pain-t{padding-right:28px}
+.pain-line{margin-top:40px;text-align:center;font-family:var(--f-display);font-weight:600;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.4;letter-spacing:-.005em;color:var(--crema)}
+@media (min-width:1000px){.pain-line{white-space:nowrap}}
+.logras .logras-list{margin-top:26px}
+.logras-note{margin-top:16px;font-size:.95rem;color:var(--muted);max-width:46ch}
+.logras-line{grid-column:1/-1;margin-top:clamp(20px,3vw,36px);text-align:center;font-family:var(--f-display);font-weight:600;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.4;letter-spacing:-.005em;color:var(--tinta)}
+@media (min-width:1000px){.logras-line{white-space:nowrap}}
+.logras .logras-line{margin-top:-8px}
+.proceso .sec-head{max-width:none}
+.proceso .sec-head .lede{max-width:none}
+@media (min-width:1180px){.proceso .sec-head .lede{white-space:nowrap}}
+.franja{display:grid;justify-items:center;text-align:center;gap:6px}
+.franja .fr-main{max-width:44ch;text-wrap:balance;color:var(--tinta-2)}
+.franja .fr-hl{display:block;max-width:none}
+@media (min-width:1000px){.franja .fr-hl{white-space:nowrap}}
+.franja .fr-main{max-width:none}
+@media (min-width:760px){.franja .fr-l{display:block;white-space:nowrap}}
+.c-note .note-2{display:block;margin-top:8px}
+.c-fit .note-2{display:block;margin-top:8px}
+@media (min-width:761px){.ruta-list li{grid-template-columns:250px minmax(0,1fr) 230px}.ruta-list .dur{text-align:right}}
+
+/* Tarjetas de servicio · cabecera de color + «Qué incluye» desplegable */
+.svc-grid .card{padding:0;overflow:hidden;row-gap:0;gap:0}
+.svc-grid .card > *{margin-inline:24px}
+.svc-grid .card > .c-head{margin:0;padding:22px 24px 20px;display:grid;gap:10px;align-content:start}
+.svc-audit .c-head{background:var(--cielo)}
+.svc-method .c-head{background:var(--arena)}
+.svc-sprint .c-head{background:var(--tinta);color:var(--crema)}
+.svc-sprint .c-head .sub-name{color:var(--cielo)}
+.svc-grid .c-head .tag{background:rgba(255,255,255,.55);color:var(--tinta)}
+.svc-sprint .c-head .tag{background:rgba(243,231,215,.14);color:var(--crema)}
+.svc-grid .c-head h4{font-size:1.45rem}
+.svc-grid .c-head .c-lead{font-size:1.12rem}
+.c-plazo{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.02em;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:4px;padding-top:10px;border-top:1px dashed rgba(38,51,67,.25)}
+.c-plazo span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.svc-sprint .c-plazo{border-top-color:rgba(243,231,215,.25)}
+.svc-grid .card > .c-note{margin-top:18px}
+.svc-grid .card > .c-fit{margin-top:14px}
+.c-incl{margin-top:14px;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line)}
+.c-more{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:none;border:0;padding:12px 0;min-height:48px;cursor:pointer;font:500 .78rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tinta);text-align:left}
+.c-more small{font-size:1em;opacity:.6}
+.c-more:hover{color:var(--vino)}
+.c-more[aria-expanded="true"] .faq-ic{background:var(--vino)}
+.c-more[aria-expanded="true"] .faq-ic::before,.c-more[aria-expanded="true"] .faq-ic::after{background:var(--crema)}
+.c-more[aria-expanded="true"] .faq-ic::after{transform:translate(-50%,-50%) rotate(0deg)}
+.c-list{padding:2px 0 16px}
+.svc-grid .card > .card-foot{margin:0;padding:16px 24px 22px;border-top:0}
+@media (min-width:1001px){
+  .svc-grid{grid-template-rows:repeat(5,auto)}
+  .svc-grid .card{grid-row:span 5;grid-template-rows:subgrid;row-gap:0}
+}
+.svc-grid .card > .c-note{background:none;padding:0;border-radius:0;color:var(--tinta);font-size:.98rem;line-height:1.55}
+.svc-grid .card > .c-fit{padding-left:12px;border-left:3px solid var(--line)}
+.svc-grid .card.svc-audit > .c-fit{border-left-color:var(--cielo)}
+.svc-grid .card.svc-method > .c-fit{border-left-color:var(--arena)}
+.svc-grid .card.svc-sprint > .c-fit{border-left-color:var(--tinta)}
+.svc-grid .card > .c-fit{align-self:start}
+
+/* «Es para ti si» fuera de la tarjeta, en un bloque de color debajo de cada servicio */
+.fit-box{border-radius:var(--r-card);padding:18px 22px 20px;display:grid;gap:8px;align-content:start}
+.fit-box .fit-k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.fit-box p{font-size:1rem;line-height:1.5}
+.fit-box .fit-2{display:block;margin-top:8px;opacity:.85}
+.fit-audit{background:var(--cielo)}
+.fit-method{background:var(--arena)}
+.fit-sprint{background:var(--tinta);color:var(--crema)}
+@media (min-width:1001px){
+  .svc-grid{grid-template-rows:repeat(4,auto) auto;row-gap:0;column-gap:20px}
+  .svc-grid .card{grid-row:1/5;grid-template-rows:subgrid}
+  .svc-grid .fit-box{grid-row:5;margin-top:14px}
+  .svc-grid .col-1{grid-column:1}.svc-grid .col-2{grid-column:2}.svc-grid .col-3{grid-column:3}
+}
+@media (max-width:1000px){.svc-grid .fit-box{margin-top:-6px;margin-bottom:10px}}
+.fit-audit{background:var(--cielo-2)}
+.fit-method{background:var(--arena-2)}
+.fit-sprint{background:var(--tinta-2)}
+.card-foot .c-plazo{flex-basis:100%;margin:0 0 4px;padding:0;border:0;color:var(--tinta)}
+.fit-box{position:relative;padding-top:22px;padding-right:76px}
+.fit-badge{position:absolute;top:-16px;right:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;border:4px solid var(--crema);box-shadow:var(--shadow);transform:rotate(-8deg)}
+.fit-badge svg{width:24px;height:24px}
+.fit-audit .fit-badge{background:var(--cielo);color:var(--tinta)}
+.fit-method .fit-badge{background:var(--arena);color:var(--tinta)}
+.fit-sprint .fit-badge{background:var(--vino);color:var(--crema)}
+@media (max-width:1000px){.svc-grid .fit-box{margin-top:6px}}
+.card-foot .c-plazo{display:grid;gap:2px;justify-items:start}
+.card-foot .c-plazo span{display:block}
+.fit-box{padding-right:22px}
+@media (min-width:761px){.ruta-list li{grid-template-columns:250px minmax(0,1fr)}}
+.start-cta{margin-top:clamp(44px,5vw,64px);display:grid;justify-items:center;text-align:center;gap:14px}
+.start-cta h3{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+.start-cta p{font-size:1.12rem;line-height:1.5;color:var(--muted);max-width:52ch}
+.start-cta .btn{margin-top:8px}
+.svc-grid .c-head .c-name{display:block;min-height:2.3em}
+.start-cta p{max-width:none}
+@media (min-width:860px){.start-cta p{white-space:nowrap}}
+/* Sobre Seiri en celeste; testimonios en crema claro para alternar */
+.sobre{background:var(--cielo)}
+.sobre .st:nth-child(1){background:var(--crema-2)}
+.sobre .text{color:var(--tinta-2)}
+.testi{background:var(--crema-2)}
+.sobre .text p.from-line{display:inline-flex;align-items:center;gap:10px;justify-self:start;margin-top:4px;padding:.45em 1.1em .45em .5em;border-radius:999px;background:var(--crema-2);color:var(--tinta);font-weight:600;text-align:left;box-shadow:var(--shadow)}
+.from-line .globe{width:34px;height:34px;border-radius:50%;background:var(--vino);color:var(--crema);display:grid;place-items:center;flex:none}
+.from-line .globe svg{width:20px;height:20px}
+/* Tercer testimonio en celeste para que las tres tarjetas sean distintas */
+.t-card:nth-child(3){background:var(--cielo)}
+.t-card:nth-child(3) .t-av{background:var(--tinta);color:var(--crema)}
+.t-card:nth-child(3) .t-who{border-color:rgba(38,51,67,.2)}
+
+/* Nota de precio debajo del botón de cada servicio */
+.card-foot .price-note{flex-basis:100%;margin:2px 0 0;font-size:.85rem;line-height:1.35;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Seiri, inicio"><span class="br">[</span>SEIRI<span class="br">]</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#proceso">Proceso</a><a href="#servicios">Servicios</a><a href="#sobre">Sobre Seiri</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-vino btn-sm header-cta" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-panel">Menú</button>
+    <div class="mobile-panel" id="mobile-panel" hidden>
+      <a href="#proceso">Proceso</a><a href="#servicios">Servicios</a><a href="#sobre">Sobre Seiri</a><a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<main id="landing">
+
+  <!-- 1 · PORTADA -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <span class="chip-eyebrow eyebrow"><span class="br">[</span>Estudio de gestión estratégica y operativa<span class="br">]</span></span>
+        <h1 class="h1-v3">Tu empresa no necesita que estés en <span class="hl"><span class="br">[</span>todo<span class="br">]</span></span>. <span class="sub">Necesita una forma de trabajar que no dependa de ti en cada paso.</span></h1>
+        <p class="lede">Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.</p>
+        <div class="actions">
+          <a class="btn btn-vino" href="#contacto">Cuéntanos tu caso <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-line" href="#proceso">Ver cómo trabajamos</a>
+        </div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="sheet s1"><span class="w">Audit</span><ul><li class="ok">Entrevistas</li><li class="ok">Prioridades</li></ul><div class="iso"><span><span class="b">[</span>S<span class="b">]</span></span></div></div>
+        <div class="sheet s2"><span class="w">Method</span><ul><li class="ok">Procesos</li><li class="ok">Roles</li><li class="ok">Herramientas</li></ul></div>
+        <div class="sheet s3"><span class="w">Sprint</span><ul><li class="ok">Implementación</li><li class="ok">Soporte</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BANDA -->
+  <div class="ribbon" aria-hidden="true"><div class="track">
+    <span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span><span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span>
+    <span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span><span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span>
+  </div></div>
+
+  <!-- 3 · ¿TE SUENA? -->
+  <section class="suena" id="te-suena" aria-labelledby="suena-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">[ Lo que vemos en empresas de servicios ]</span>
+        <h2 id="suena-t">Tu empresa funciona.<br>Pero funciona gracias a <span class="hl"><span class="br">[</span>ti<span class="br">]</span></span>.</h2>
+      </div>
+      <ul class="pain-grid" style="list-style:none;margin:0;padding:0">
+        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">Las decisiones del día a día requieren tu aprobación.</p><p class="pain-d">Tu equipo necesita consultarte para poder avanzar.</p></li>
+        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">Cada proyecto exige volver a organizar cómo trabajar.</p><p class="pain-d">Los criterios, las tareas y los responsables se definen una y otra vez.</p></li>
+        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">La información está repartida entre mensajes, correos y llamadas.</p><p class="pain-d">Saber qué se acordó y qué falta hacer requiere revisar varios canales.</p></li>
+        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">La continuidad depende de algunas personas clave.</p><p class="pain-d">Cuando alguien no está, cuesta retomar sus tareas y mantener el ritmo.</p></li>
+      </ul>
+      <p class="pain-line">Tu empresa creció. Es momento de adaptar la forma de trabajar a sus nuevas necesidades.</p>
+    </div>
+  </section>
+
+  <!-- 4 · LO QUE LOGRAS -->
+  <section class="logras" id="logras" aria-labelledby="logras-t">
+    <div class="wrap">
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">[ Lo que cambia ]</span>
+          <h2 id="logras-t">Más claridad en el día a día para tu <span class="hl"><span class="br">[</span>equipo<span class="br">]</span></span>.</h2>
+        </div>
+        <ul class="incl logras-list"><li>Las propuestas se preparan con criterios compartidos.</li><li>Cada persona sabe qué hacer, cuándo y con quién coordinar.</li><li>Las entregas tienen momentos de revisión para detectar ajustes a tiempo.</li><li>Quienes se suman cuentan con una guía para entender cómo se trabaja.</li></ul>
+      </div>
+      <div class="stack3">
+        <div class="st"><b>Autonomía</b><span>El trabajo avanza sin que tengas que intervenir en cada paso.</span></div>
+        <div class="st"><b>Claridad</b><span>Puedes ver en qué está cada proyecto y qué necesita atención.</span></div>
+        <div class="st"><b>Tiempo</b><span>Recuperas espacio para planificar, desarrollar oportunidades y acompañar el crecimiento de tu empresa.</span></div>
+      </div>
+      <p class="logras-line">Priorizamos las mejoras según lo que necesita tu empresa y el alcance acordado.</p>
+    </div>
+  </section>
+
+  <nav class="unav" id="unav" aria-label="Secciones"><div class="in">
+    <a href="#proceso" data-u="proceso">Proceso</a><a href="#servicios" data-u="servicios">Servicios</a><a href="#contacto" data-u="contacto">Contacto</a>
+  </div></nav>
+
+  <!-- 5 · EL PROCESO -->
+  <section class="proceso" id="proceso" aria-labelledby="proceso-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">[ El proceso ]</span>
+        <h2 id="proceso-t">Nuestro <span class="hl"><span class="br">[</span>método<span class="br">]</span></span> de trabajo</h2>
+        <p class="lede">Definimos contigo por dónde empezar y acordamos un plan de trabajo con prioridades, alcance y entregables claros.</p>
+      </div>
+      <ol class="p-steps">
+        <li class="p-step a"><span class="dot">01</span><span class="verb">Observamos</span><p class="what">A través de una reunión inicial y entrevistas al equipo, entendemos cómo se organiza el trabajo y dónde aparecen las dificultades.</p><button type="button" class="to-svc" data-goto="svc-audit">Seiri Audit <span aria-hidden="true">→</span></button></li>
+        <li class="p-step a"><span class="dot">02</span><span class="verb">Clasificamos</span><p class="what">Identificamos qué funciona bien, qué necesita mejorar y qué conviene abordar primero.</p><button type="button" class="to-svc" data-goto="svc-audit">Seiri Audit <span aria-hidden="true">→</span></button></li>
+        <li class="p-step m"><span class="dot">03</span><span class="verb">Diseñamos</span><p class="what">Definimos cómo se organiza el trabajo, quién asume cada responsabilidad y qué herramientas necesita el equipo, con una hoja de ruta para ponerlo en práctica.</p><button type="button" class="to-svc" data-goto="svc-method">Seiri Method <span aria-hidden="true">→</span></button></li>
+        <li class="p-step s"><span class="dot">04</span><span class="verb">Implementamos</span><p class="what">Llevamos el diseño a la práctica: configuramos las herramientas y guiamos al equipo para incorporar el proceso a su trabajo, con documentación y soporte durante la puesta en marcha.</p><button type="button" class="to-svc" data-goto="svc-sprint">Seiri Sprint <span aria-hidden="true">→</span></button></li>
+      </ol>
+      <div class="franja"><span class="fr-main"><span class="fr-l">Desde el inicio sabes qué vamos a resolver,</span> <span class="fr-l">qué vas a recibir y en qué plazos.</span></span><b class="fr-hl">Trabajamos por proyecto, con un alcance definido y sin cuotas mensuales.</b></div>
+    </div>
+  </section>
+
+  <!-- 6 · SERVICIOS -->
+  <section class="servicios" id="servicios" aria-labelledby="servicios-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">[ Servicios ]</span>
+        <h2 id="servicios-t">Tres servicios, según lo que necesite tu <span class="hl"><span class="br">[</span>operación<span class="br">]</span></span>.</h2>
+      </div>
+
+      <div class="svc-grid" id="svc-grid">
+        <article class="card svc-audit col-1" id="svc-audit" data-interes="Seiri Audit">
+          <div class="c-head"><div class="card-top"><span class="tag t-a">Audit · Diagnóstico</span></div><h4><span class="c-name">Diagnóstico de operaciones</span><span class="sub-name">Seiri Audit</span></h4><p class="c-lead">Una mirada integral para saber qué mejorar y por dónde empezar.</p></div>
+          <p class="c-note note">Analizamos cómo se organiza el trabajo, identificamos los principales puntos de mejora y te entregamos un diagnóstico con prioridades concretas.</p>
+          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-audit"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-audit" hidden><ul class="incl"><li>Una reunión inicial de 60 minutos con la dirección.</li><li>Dos entrevistas individuales de hasta 15 minutos cada una: una con quien lidera o coordina proyectos y otra con quien ejecuta las tareas o brinda apoyo operativo.</li><li>Revisión de las herramientas de gestión, los documentos de trabajo y ejemplos de proyectos recientes, para analizar cómo se organizan las tareas, las entregas y el seguimiento.</li><li>Un diagnóstico ejecutivo con los principales puntos de mejora, sus posibles causas y las prioridades recomendadas.</li><li>Una sesión de devolución con la dirección para presentar los hallazgos y los próximos pasos.</li></ul></div></div>
+          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 5 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Audit">Quiero un diagnóstico →</a><p class="price-note">Propuesta personalizada según el tamaño del equipo y las áreas a analizar.</p></div>
+        </article>
+        <div class="fit-box fit-audit col-1"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="fit-k">Es para ti si</span><p>Buscas claridad para tomar decisiones y enfocar los próximos cambios.</p></div>
+        <article class="card svc-method col-2" id="svc-method" data-interes="Seiri Method">
+          <div class="c-head"><div class="card-top"><span class="tag t-m">Method · Diseño</span></div><h4><span class="c-name">Diseño del método de trabajo</span><span class="sub-name">Seiri Method</span></h4><p class="c-lead">Del diagnóstico a los procesos que tu empresa necesita.</p></div>
+          <p class="c-note note">A partir de las prioridades identificadas en la auditoría, diseñamos cómo deben funcionar los procesos seleccionados: qué se hace, quién es responsable, cómo se coordinan las tareas y qué criterios se siguen.<span class="note-2">Entregamos a la dirección los procesos desarrollados y documentados, junto con una hoja de ruta para implementarlos con su equipo.</span></p>
+          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-method"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-method" hidden><ul class="incl"><li>Hasta tres sesiones de trabajo de 30 minutos con referentes del equipo para profundizar en los procesos seleccionados y validar las decisiones de diseño.</li><li>Los procesos diseñados y documentados, con pasos, responsables, criterios de trabajo y puntos de revisión.</li><li>La definición de roles y formas de coordinación necesarios para esos procesos.</li><li>Las recomendaciones de herramientas y sus criterios de uso.</li><li>El diseño del seguimiento: qué información registrar y cómo visualizar tareas, responsables y avances.</li><li>Una hoja de ruta para la implementación, con prioridades, dependencias y acciones a cargo de la dirección y del equipo.</li><li>Una sesión de entrega a la dirección para explicar el diseño y orientar su implementación.</li><li>Una sesión de revisión a los 30 días de la entrega y una ronda de ajustes sobre el diseño acordado.</li></ul></div></div>
+          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 20 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Method">Quiero diseñar mis procesos →</a><p class="price-note">Propuesta personalizada según la cantidad de procesos a diseñar y las áreas que participan.</p></div>
+        </article>
+        <div class="fit-box fit-method col-2"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><span class="fit-k">Es para ti si</span><p>Necesitas transformar el diagnóstico en una forma de trabajar concreta y cuentas con capacidad interna para llevarla a la práctica.</p></div>
+        <article class="card svc-sprint col-3" id="svc-sprint" data-interes="Seiri Sprint">
+          <div class="c-head"><div class="card-top"><span class="tag t-s">Sprint · Implementación de un proceso</span></div><h4><span class="c-name">Implementación de un proceso</span><span class="sub-name">Seiri Sprint</span></h4><p class="c-lead">Una mejora concreta, puesta en marcha con tu equipo.</p></div>
+          <p class="c-note note">Rediseñamos e implementamos un proceso prioritario, con las herramientas y la documentación necesarias para incorporarlo al trabajo diario. Acordamos su alcance y cómo vamos a comprobar que funciona.</p>
+          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-sprint"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-sprint" hidden><ul class="incl"><li>Una sesión inicial de 30 minutos para conocer el proceso y acordar el alcance de la implementación.</li><li>Un proceso prioritario rediseñado y puesto en marcha, con pasos y responsables definidos.</li><li>Las herramientas necesarias configuradas para el proceso acordado.</li><li>Una guía de uso con los pasos del proceso y las indicaciones para el equipo.</li><li>Una sesión práctica de 60 minutos para aprender a aplicar el proceso y utilizar las herramientas.</li><li>Dos semanas de soporte asíncrono desde la puesta en marcha, para resolver dudas de uso y acompañar la adopción.</li><li>Una sesión de revisión a los 30 días de la puesta en marcha y una ronda de ajustes sobre el proceso implementado.</li></ul></div></div>
+          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 20 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Sprint">Quiero implementar un proceso →</a><p class="price-note">Propuesta personalizada según las etapas del proceso y las herramientas a configurar.</p></div>
+        </article>
+        <div class="fit-box fit-sprint col-3"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="fit-k">Es para ti si</span><p>Tienes una necesidad identificada y buscas apoyo para implementar la solución sin sobrecargar a tu equipo.</p></div>
+      </div>
+      <div class="start-cta">
+        <h3>Encontremos por dónde <span class="hl"><span class="br">[</span>empezar<span class="br">]</span></span>.</h3>
+        <p>Cuéntanos qué necesitas y analizamos la mejor manera de ayudarte.</p>
+        <a class="btn btn-vino" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 8 · SOBRE SEIRI -->
+  <section class="sobre" id="sobre" lang="es">
+    <div class="wrap">
+      <span class="eyebrow sobre-tag" style="color:var(--vino)">[ Sobre Seiri ]</span>
+      <div>
+        <p class="motto">El orden que permite dar el próximo <span class="hl"><span class="br">[</span>salto<span class="br">]</span></span>.</p>
+      </div>
+      <div class="text">
+        <p>Seiri toma su nombre de la idea de clasificar, presente en la <strong>metodología japonesa 5S</strong>. Para nosotros, es un punto de partida: entender cómo se trabaja, identificar prioridades y dar una estructura clara a los procesos, la información y las responsabilidades.</p>
+        <p>Somos un equipo de profesionales con una trayectoria de más de <strong>15 años en gestión de proyectos y operaciones</strong>. Nuestra experiencia abarca desde la coordinación de proyectos simultáneos hasta la dirección de operaciones en distintas agencias.</p>
+        <p>Vivimos de cerca lo que ocurre cuando una empresa crece y su organización queda atrás: las urgencias se acumulan, coordinar consume cada vez más tiempo y demasiadas decisiones se concentran en pocas personas.</p>
+        <p><strong>Seiri nace de esa experiencia</strong>. Diseñamos procesos y criterios de trabajo que el equipo pueda consultar, aplicar y sostener, para que la dirección pueda delegar con confianza y dedicar más atención al desarrollo del negocio.</p>
+        <p class="from-line"><span class="globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.5 4 5.6 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.6-4-9s1.4-6.5 4-9z"/></svg></span><span>Desde España, al mundo.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · TESTIMONIOS · reales y autorizados (confirmado por Mel) -->
+  <section class="testi" id="testimonios">
+    <div class="wrap">
+      <div class="head">
+        <div class="sec-head" style="margin:0">
+          <span class="eyebrow" style="color:var(--vino)">[ Testimonios ]</span>
+          <h2>Experiencias con <span class="hl"><span class="br">[</span>Seiri<span class="br">]</span></span></h2>
+        </div>
+      </div>
+      <div class="t-grid">
+        <figure class="t-card" style="margin:0">
+          <blockquote>Melina y su equipo nos ayudaron a ordenar cómo trabajamos y a dejar más claro quién se ocupa de cada tema. A mí, en particular, me ayudó a delegar y a estar menos pendiente de la operación diaria. Entendieron nuestra dinámica y propusieron cambios que pudimos llevar a la práctica ágilmente.</blockquote>
+          <figcaption class="t-who"><span class="t-av">O</span><span><b>Osvaldo</b><span>CEO · Empresa constructora</span></span></figcaption>
+        </figure>
+        <figure class="t-card" style="margin:0">
+          <blockquote>Teníamos varias ideas para mejorar nuestra organización pero estábamos intentando avanzar con todas a la vez. La auditoría nos ayudó a poner prioridades. Nos llevamos una explicación concreta de qué convenía revisar primero y qué podía esperar. ¡Muchas gracias!</blockquote>
+          <figcaption class="t-who"><span class="t-av">V</span><span><b>Victoria</b><span>Responsable de Operaciones · Agencia de Marketing</span></span></figcaption>
+        </figure>
+        <figure class="t-card" style="margin:0">
+          <blockquote>En la agencia hacíamos muchas cosas manualmente y cada persona resolvía las gestiones con su propio criterio. Seiri nos ayudó a ordenar los procesos y acordar una misma forma de trabajar. Estamos muy contentos con el resultado.</blockquote>
+          <figcaption class="t-who"><span class="t-av">A</span><span><b>Antonio</b><span>Director · Productora de eventos</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10a · PREGUNTAS FRECUENTES -->
+  <section class="faq" id="preguntas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:var(--vino)">[ Dudas ]</span>
+        <h2>Preguntas <span class="hl"><span class="br">[</span>frecuentes<span class="br">]</span></span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b1" aria-expanded="false" aria-controls="faq-p1"><span>¿Por dónde empezamos?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p1" role="region" aria-labelledby="faq-b1"><p>Con una llamada de 20 minutos para conocer tu empresa, entender qué necesitas y orientarte sobre cómo avanzar. Habitualmente empezamos con Seiri Audit. Si ya tienes una necesidad concreta y bien definida, podemos evaluar un Sprint directamente.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b3" aria-expanded="false" aria-controls="faq-p3"><span>¿Tenemos que usar una herramienta concreta?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p3" role="region" aria-labelledby="faq-b3"><p>Partimos de las herramientas que el equipo utiliza habitualmente. Evaluamos cómo aprovecharlas mejor y, cuando encontramos una alternativa que puede simplificar el trabajo, la proponemos y explicamos por qué. La elección considera las necesidades, el presupuesto y la facilidad de uso para el equipo.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b5" aria-expanded="false" aria-controls="faq-p5"><span>¿Ofrecen acompañamiento mensual?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p5" role="region" aria-labelledby="faq-b5"><p>Trabajamos por proyecto, con objetivos, entregables y plazos acordados. Cada servicio incluye sus instancias de revisión y soporte. Al finalizar, la documentación queda en manos de tu equipo para que pueda continuar con autonomía. Si surge una nueva necesidad, podemos trabajar juntos en otro proyecto.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b6" aria-expanded="false" aria-controls="faq-p6"><span>¿Qué incluye el precio?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p6" role="region" aria-labelledby="faq-b6"><p>El precio depende del alcance de cada proyecto. Cada propuesta detalla el precio, los entregables, el calendario por semanas y el soporte incluido. Si hacen falta herramientas de pago, lo aclaramos antes de empezar.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b8" aria-expanded="false" aria-controls="faq-p8"><span>¿El trabajo es en remoto?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p8" role="region" aria-labelledby="faq-b8"><p>Sí. Trabajamos en remoto con empresas de distintos países. Coordinamos las reuniones y los intercambios de información según los horarios del equipo.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b9" aria-expanded="false" aria-controls="faq-p9"><span>¿Utilizan inteligencia artificial?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p9" role="region" aria-labelledby="faq-b9"><p>Sí, cuando aporta una mejora concreta. Primero definimos el proceso, las responsabilidades y los criterios de trabajo; después evaluamos dónde incorporar IA. Aplicarla sobre tareas desorganizadas multiplica errores y acelera la confusión.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10b · CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">[ Contacto ]</span>
+        <h2 style="margin-top:16px">Cuéntanos<br><span class="hl"><span class="br">[</span>tu caso<span class="br">]</span></span></h2>
+        <p class="lead">Coordinemos una llamada de 20 minutos para conocer tu empresa y explorar cómo podemos ayudarte.</p>
+        <!-- PENDIENTE: sumar el email de Seiri con botón Copiar cuando el dominio esté activo. -->
+      </div>
+      <!-- PENDIENTE: conectar el formulario a un servicio de envío. WhatsApp retirado hasta que esté configurado. -->
+      <form class="form" id="contact-form" novalidate>
+        <fieldset>
+          <legend>¿Qué te interesa? <span class="opt-note" style="font-weight:400;color:var(--muted);font-size:.88rem">(opcional)</span></legend>
+          <div class="opts" id="int-opts">
+            <label class="opt"><input type="radio" name="interes" value="Seiri Audit" id="i-audit"><span><em>Audit</em></span></label>
+            <label class="opt"><input type="radio" name="interes" value="Seiri Method" id="i-method"><span><em>Method</em></span></label>
+            <label class="opt"><input type="radio" name="interes" value="Seiri Sprint" id="i-sprint"><span><em>Sprint</em></span></label>
+            <label class="opt"><input type="radio" name="interes" value="Todavía no lo sé" id="i-nose"><span>Todavía no lo sé</span></label>
+          </div>
+        </fieldset>
+        <div class="row2">
+          <div class="field"><label class="lb" for="f-name">Nombre</label><input id="f-name" type="text" autocomplete="name" required></div>
+          <div class="field"><label class="lb" for="f-email">Email</label><input id="f-email" type="email" autocomplete="email" inputmode="email" required></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label class="lb" for="f-company">Empresa</label><input id="f-company" type="text" autocomplete="organization" required></div>
+          <div class="field"><label class="lb" for="f-size">Tamaño del equipo</label><select id="f-size" required><option value="">Elige una opción</option><option>Menos de 4</option><option>De 4 a 10</option><option>De 11 a 20</option><option>Más de 20</option></select></div>
+        </div>
+        <div class="field"><label class="lb" for="f-msg">¿Qué te gustaría resolver?</label><p class="help" id="f-msg-help">Cuéntanos en dos o tres frases cómo trabaja hoy tu equipo y qué te gustaría cambiar.</p><textarea id="f-msg" aria-describedby="f-msg-help" required></textarea></div>
+        <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="#privacidad">política de privacidad</a> y acepto que Seiri use mis datos para responder a mi consulta.</span></label>
+        <p class="err" id="f-err" role="alert"></p>
+        <button class="btn btn-vino" type="submit" style="justify-self:start">Hablemos <span class="arr" aria-hidden="true">→</span></button>
+        <div class="ready" id="f-ready" hidden>
+          <b>Tu mensaje está listo</b>
+          <p>El envío desde la web todavía no está activo. Puedes copiar tu mensaje para tenerlo a mano.</p>
+          <pre id="f-preview"></pre>
+          <div class="row"><button class="btn btn-line btn-sm" type="button" id="f-copy">Copiar mensaje</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a class="logo" href="#inicio"><span class="b">[</span>SEIRI<span class="b">]</span></a><p class="tagline">Estudio de gestión estratégica y operativa.</p>
+        <!-- PENDIENTE: reemplazar # por las URL reales de Instagram y LinkedIn de Seiri. -->
+        <div class="social">
+          <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Seiri en Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
+          <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Seiri en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6"/><circle cx="8" cy="7.6" r=".6" fill="currentColor"/><path d="M11.5 16.5v-6M11.5 13.2c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.6v3.4"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Seiri</h4><ul><li><a href="#proceso">Proceso</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre">Sobre Seiri</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="#contacto">Formulario de contacto</a></li><!-- PENDIENTE: volver a sumar WhatsApp cuando esté configurado. --><!-- PENDIENTE: sumar el email de Seiri cuando esté activo. --></ul></div>
+    </div>
+    <!-- PENDIENTE: redactar y enlazar Aviso legal, Política de privacidad y Política de cookies antes de publicar. -->
+    <div class="legal"><span>© 2026 Seiri · Desde España al mundo</span><span><a href="#aviso-legal">Aviso legal</a> · <a href="#privacidad">Privacidad</a> · <a href="#cookies">Cookies</a></span></div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const WA = '34634418863';
+  const WA_DEFAULT = 'Hola, Seiri. Me gustaría coordinar una llamada y contar cómo trabaja mi empresa.';
+  const waURL = t => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
+  $$('.wa-link').forEach(a => a.href = waURL(WA_DEFAULT));
+
+  /* Menú móvil */
+  const mb = $('#menu-btn'), mp = $('#mobile-panel');
+  mb.addEventListener('click', () => { const o = mp.hidden; mp.hidden = !o; mb.setAttribute('aria-expanded', String(o)); });
+  $$('#mobile-panel a').forEach(a => a.addEventListener('click', () => { mp.hidden = true; mb.setAttribute('aria-expanded','false'); }));
+
+  /* Ir a un ancla al cargar */
+  function route(){ const h = location.hash.replace('#',''); if (h){ const el = document.getElementById(h); if (el) requestAnimationFrame(() => el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'})); } updateNav(); }
+  addEventListener('hashchange', route);
+
+  /* Sub-navegación por secciones: Proceso, Servicios y Contacto */
+  const unav = $('#unav'), secs = ['proceso','servicios','contacto'].map(id => document.getElementById(id));
+  function updateNav(){
+    const y = innerHeight * 0.35; let cur = null;
+    secs.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < y && r.bottom > y) cur = s.id; });
+    const top = secs[0].getBoundingClientRect().top, bottom = secs[2].getBoundingClientRect().bottom;
+    unav.classList.toggle('show', top < y && bottom > y);
+    $$('#unav a').forEach(a => a.setAttribute('aria-current', String(a.dataset.u === cur)));
+  }
+  addEventListener('scroll', updateNav, {passive:true});
+
+  /* Resaltar servicios */
+  const grid = $('#svc-grid');
+  function highlight(ids){
+    $$('#svc-grid .card').forEach(c => c.classList.toggle('pick', ids.includes(c.id)));
+    grid.classList.toggle('has-pick', ids.length > 0);
+  }
+  const NAMES = {'svc-audit':'Seiri Audit','svc-method':'Seiri Method','svc-sprint':'Seiri Sprint'};
+  $$('.g-pill').forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    $$('.g-pill').forEach(x => x.setAttribute('aria-pressed', String(x === b && on)));
+    const ids = on ? b.dataset.show.split(' ') : [];
+    highlight(ids);
+    $('#g-res').innerHTML = on ? 'Te recomendamos: ' + ids.map(i => '<b>' + NAMES[i] + '</b>').join(', y después ') + '.' : '';
+  }));
+  $$('[data-goto]').forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.goto); if (!el) return;
+    $$('.g-pill').forEach(x => x.setAttribute('aria-pressed','false')); if ($('#g-res')) $('#g-res').textContent = '';
+    highlight([el.id]);
+    el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+  }));
+
+  /* Botones de servicio: abren el formulario con el servicio elegido */
+  $$('[data-pick]').forEach(a => a.addEventListener('click', () => {
+    const r = $$('input[name="interes"]').find(x => x.value === a.dataset.pick); if (r) r.checked = true;
+    setTimeout(() => $('#f-name').focus({preventScroll:true}), reduce ? 0 : 600);
+  }));
+
+  /* Formulario */
+  $('#contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#f-err'); err.textContent = '';
+    const v = id => $('#' + id).value.trim();
+    const interes = ($$('input[name="interes"]').find(x => x.checked) || {}).value || '';
+    const checks = [
+      ['f-name', v('f-name'), 'Escribe tu nombre para saber cómo dirigirnos a ti.'],
+      ['f-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('f-email')), 'Revisa tu email. Debe tener un formato como nombre@correo.com.'],
+      ['f-company', v('f-company'), 'Escribe el nombre de tu empresa.'],
+      ['f-size', v('f-size'), 'Elige el tamaño de tu equipo.'],
+      ['f-msg', v('f-msg'), 'Cuéntanos qué te gustaría resolver.'],
+      ['f-consent', $('#f-consent').checked, 'Marca la casilla para confirmar que has leído la política de privacidad.']
+    ];
+    const bad = checks.find(c => !c[1]);
+    if (bad){ err.textContent = bad[2]; $('#' + bad[0]).focus(); return; }
+    const text = 'Hola, Seiri. Me gustaría coordinar una llamada de 20 minutos.\n\n' +
+      (interes ? 'Me interesa: ' + interes + '\n' : '') +
+      'Empresa: ' + v('f-company') + ' · Equipo: ' + v('f-size') + '\n\n' + v('f-msg') + '\n\n' + v('f-name') + ' · ' + v('f-email');
+    $('#f-preview').textContent = text;
+    $('#f-ready').hidden = false;
+    $('#f-copy').focus();
+  });
+  $('#f-copy').addEventListener('click', e => {
+    const btn = e.currentTarget, done = () => { btn.textContent = 'Copiado'; setTimeout(() => btn.textContent = 'Copiar mensaje', 1600); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents($('#f-preview')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText($('#f-preview').textContent).then(done).catch(fallback); } catch(_){ fallback(); }
+  });
+
+
+  /* Servicios: «Qué incluye» se abre en las tres tarjetas a la vez para comparar */
+  $$('.c-more').forEach(btn => btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    $$('.c-more').forEach(x => { x.setAttribute('aria-expanded', String(open)); document.getElementById(x.getAttribute('aria-controls')).hidden = !open; });
+  }));
+
+  /* Preguntas frecuentes: acordeón accesible */
+  $$('.faq-btn').forEach(btn => {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    panel.hidden = true;
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!open)); panel.hidden = open; });
+  });
+
+  route();
+})();
+</script>
+</body>
+</html>
