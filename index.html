@@ -12,17 +12,17 @@
 <meta property="og:description" content="Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.">
 <meta name="theme-color" content="#263343">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 <title>Seiri · Estudio de gestión estratégica y operativa</title>
 <meta name="description" content="Diagnosticamos y diseñamos mejoras operativas para empresas de servicios que trabajan por proyectos. Implementamos procesos con tu equipo para reducir la dependencia de la dirección.">
 <style>
-@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
-@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
-@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"DM Mono";src:url(fonts/dm-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"DM Mono";src:url(fonts/dm-mono-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(instrument-sans.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(instrument-serif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(instrument-serif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(dm-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(dm-mono-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
 
 /* Concepto: bloques de color de la paleta (crema 45 · tinta 25 · vino 15 · cielo 10 · arena 5) que se alternan
    con ritmo claro / color / oscuro. Tarjetas suaves, signos de orden ([ ], casillas, guion) como único adorno. */
@@ -762,6 +762,11 @@ p{margin:0}
 
 /* Información básica de protección de datos (primera capa) junto al formulario */
 .legal-note{margin:0;font-size:.78rem;line-height:1.5;color:var(--muted)}
+.legal-note summary{cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:2px;list-style:none}
+.legal-note summary::-webkit-details-marker{display:none}
+.legal-note summary::after{content:" ▾"}
+.legal-note[open] summary::after{content:" ▴"}
+.legal-note p{margin:8px 0 0}
 .legal-note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
@@ -996,11 +1001,11 @@ p{margin:0}
           <div class="field"><label class="lb" for="f-size">Tamaño del equipo</label><select id="f-size" required><option value="">Elige una opción</option><option>Menos de 4</option><option>De 4 a 10</option><option>De 11 a 20</option><option>Más de 20</option></select></div>
         </div>
         <div class="field"><label class="lb" for="f-msg">¿Qué te gustaría resolver?</label><p class="help" id="f-msg-help">Cuéntanos en dos o tres frases cómo trabaja hoy tu equipo y qué te gustaría cambiar.</p><textarea id="f-msg" aria-describedby="f-msg-help" required></textarea></div>
-        <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que Melina Martini Gache (Seiri) use mis datos para responder a mi consulta y coordinar una llamada.</span></label>
+        <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que Seiri use mis datos para responder a mi consulta y coordinar una llamada.</span></label>
         <div class="hp" aria-hidden="true"><label for="f-web">No completes este campo</label><input type="text" id="f-web" name="web" tabindex="-1" autocomplete="off"></div>
         <p class="err" id="f-err" role="alert"></p>
         <button class="btn btn-vino" type="submit" id="f-send" style="justify-self:start">Hablemos <span class="arr" aria-hidden="true">→</span></button>
-        <p class="legal-note"><b>Protección de datos.</b> Responsable: Melina Nathaly Martini Gache (Seiri). Finalidad: responder a tu consulta y coordinar una llamada. Base legal: tu consentimiento. Destinatarios: no cedemos tus datos a terceros; nuestros proveedores (Google, Cloudflare, Brevo y GitHub) los tratan por nuestra cuenta, y algunos lo hacen en EE.&nbsp;UU. con garantías adecuadas. Derechos: acceso, rectificación, supresión y otros, escribiendo a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Más información en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+        <details class="legal-note"><summary>Información básica sobre protección de datos</summary><p>Responsable: Melina Nathaly Martini Gache (Seiri). Finalidad: responder a tu consulta y coordinar una llamada. Base legal: tu consentimiento. Destinatarios: no cedemos tus datos a terceros; nuestros proveedores (Google, Cloudflare, Brevo y GitHub) los tratan por nuestra cuenta, y algunos lo hacen en EE.&nbsp;UU. con garantías adecuadas. Derechos: acceso, rectificación, supresión y otros, escribiendo a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Más información en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p></details>
         <div class="ready ok" id="f-ok" hidden tabindex="-1">
           <b>¡Gracias! Recibimos tu mensaje.</b>
           <p>Te escribiremos a <span id="f-ok-mail"></span> desde hola@seiri-studio.com para coordinar la llamada.</p>
