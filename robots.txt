@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seiri-studio.com/sitemap.xml

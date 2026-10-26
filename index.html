@@ -3,20 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- Fase de pruebas: evita que Google indexe la web. Quitar esta línea al lanzar. -->
-<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://seiri-studio.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://seiri-studio.com/">
+<meta property="og:site_name" content="Seiri">
 <meta property="og:title" content="Seiri · Estudio de gestión estratégica y operativa">
 <meta property="og:description" content="Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.">
 <meta name="theme-color" content="#263343">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 <title>Seiri · Estudio de gestión estratégica y operativa</title>
 <meta name="description" content="Diagnosticamos y diseñamos mejoras operativas para empresas de servicios que trabajan por proyectos. Implementamos procesos con tu equipo para reducir la dependencia de la dirección.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(fonts/dm-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(fonts/dm-mono-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
 /* Concepto: bloques de color de la paleta (crema 45 · tinta 25 · vino 15 · cielo 10 · arena 5) que se alternan
    con ritmo claro / color / oscuro. Tarjetas suaves, signos de orden ([ ], casillas, guion) como único adorno. */
 :root{
@@ -743,6 +750,19 @@ p{margin:0}
 
 /* Nota de precio debajo del botón de cada servicio */
 .card-foot .price-note{flex-basis:100%;margin:2px 0 0;font-size:.85rem;line-height:1.35;color:var(--muted)}
+
+/* Formulario conectado: campo trampa oculto, confirmación y correo de contacto */
+.hp{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden}
+.ready.ok{background:var(--cielo)}
+.ready:focus{outline:none}
+.mail-line{margin-top:24px;font-size:.92rem;color:var(--crema)}
+.mail-line a{color:var(--crema);background:rgba(243,231,215,.12);padding:.5em .95em;border-radius:999px;text-decoration:none;transition:background .15s}
+.mail-line a:hover,.mail-line a:focus-visible{background:rgba(243,231,215,.24)}
+#f-send:disabled{opacity:.7;cursor:wait}
+
+/* Información básica de protección de datos (primera capa) junto al formulario */
+.legal-note{margin:0;font-size:.78rem;line-height:1.5;color:var(--muted)}
+.legal-note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -954,9 +974,9 @@ p{margin:0}
         <span class="eyebrow">[ Contacto ]</span>
         <h2 style="margin-top:16px">Cuéntanos<br><span class="hl"><span class="br">[</span>tu caso<span class="br">]</span></span></h2>
         <p class="lead">Coordinemos una llamada de 20 minutos para conocer tu empresa y explorar cómo podemos ayudarte.</p>
-        <!-- PENDIENTE: sumar el email de Seiri con botón Copiar cuando el dominio esté activo. -->
+        <p class="mail-line">O escríbenos a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a></p>
       </div>
-      <!-- PENDIENTE: conectar el formulario a un servicio de envío. WhatsApp retirado hasta que esté configurado. -->
+      <!-- El formulario envía a Google Sheets (Apps Script). WhatsApp retirado hasta que esté configurado. -->
       <form class="form" id="contact-form" novalidate>
         <fieldset>
           <legend>¿Qué te interesa? <span class="opt-note" style="font-weight:400;color:var(--muted);font-size:.88rem">(opcional)</span></legend>
@@ -976,14 +996,20 @@ p{margin:0}
           <div class="field"><label class="lb" for="f-size">Tamaño del equipo</label><select id="f-size" required><option value="">Elige una opción</option><option>Menos de 4</option><option>De 4 a 10</option><option>De 11 a 20</option><option>Más de 20</option></select></div>
         </div>
         <div class="field"><label class="lb" for="f-msg">¿Qué te gustaría resolver?</label><p class="help" id="f-msg-help">Cuéntanos en dos o tres frases cómo trabaja hoy tu equipo y qué te gustaría cambiar.</p><textarea id="f-msg" aria-describedby="f-msg-help" required></textarea></div>
-        <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="#privacidad">política de privacidad</a> y acepto que Seiri use mis datos para responder a mi consulta.</span></label>
+        <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que Melina Martini Gache (Seiri) use mis datos para responder a mi consulta y coordinar una llamada.</span></label>
+        <div class="hp" aria-hidden="true"><label for="f-web">No completes este campo</label><input type="text" id="f-web" name="web" tabindex="-1" autocomplete="off"></div>
         <p class="err" id="f-err" role="alert"></p>
-        <button class="btn btn-vino" type="submit" style="justify-self:start">Hablemos <span class="arr" aria-hidden="true">→</span></button>
-        <div class="ready" id="f-ready" hidden>
-          <b>Tu mensaje está listo</b>
-          <p>El envío desde la web todavía no está activo. Puedes copiar tu mensaje para tenerlo a mano.</p>
+        <button class="btn btn-vino" type="submit" id="f-send" style="justify-self:start">Hablemos <span class="arr" aria-hidden="true">→</span></button>
+        <p class="legal-note"><b>Protección de datos.</b> Responsable: Melina Nathaly Martini Gache (Seiri). Finalidad: responder a tu consulta y coordinar una llamada. Base legal: tu consentimiento. Destinatarios: no cedemos tus datos a terceros; nuestros proveedores (Google, Cloudflare, Brevo y GitHub) los tratan por nuestra cuenta, y algunos lo hacen en EE.&nbsp;UU. con garantías adecuadas. Derechos: acceso, rectificación, supresión y otros, escribiendo a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Más información en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+        <div class="ready ok" id="f-ok" hidden tabindex="-1">
+          <b>¡Gracias! Recibimos tu mensaje.</b>
+          <p>Te escribiremos a <span id="f-ok-mail"></span> desde hola@seiri-studio.com para coordinar la llamada.</p>
+        </div>
+        <div class="ready" id="f-ready" hidden tabindex="-1">
+          <b>No pudimos enviar tu mensaje</b>
+          <p>Puede ser un problema de conexión. Inténtalo de nuevo en unos minutos o escríbenos a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Te dejamos el mensaje listo para copiar.</p>
           <pre id="f-preview"></pre>
-          <div class="row"><button class="btn btn-line btn-sm" type="button" id="f-copy">Copiar mensaje</button></div>
+          <div class="row"><a class="btn btn-tinta btn-sm" id="f-mailto" href="mailto:hola@seiri-studio.com">Enviar por email</a><button class="btn btn-line btn-sm" type="button" id="f-copy">Copiar mensaje</button></div>
         </div>
       </form>
     </div>
@@ -994,17 +1020,11 @@ p{margin:0}
   <div class="wrap">
     <div class="f-grid">
       <div><a class="logo" href="#inicio"><span class="b">[</span>SEIRI<span class="b">]</span></a><p class="tagline">Estudio de gestión estratégica y operativa.</p>
-        <!-- PENDIENTE: reemplazar # por las URL reales de Instagram y LinkedIn de Seiri. -->
-        <div class="social">
-          <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Seiri en Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
-          <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Seiri en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6"/><circle cx="8" cy="7.6" r=".6" fill="currentColor"/><path d="M11.5 16.5v-6M11.5 13.2c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.6v3.4"/></svg></a>
-        </div>
       </div>
       <div><h4>Seiri</h4><ul><li><a href="#proceso">Proceso</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre">Sobre Seiri</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
-      <div><h4>Contacto</h4><ul><li><a href="#contacto">Formulario de contacto</a></li><!-- PENDIENTE: volver a sumar WhatsApp cuando esté configurado. --><!-- PENDIENTE: sumar el email de Seiri cuando esté activo. --></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a></li><li><a href="#contacto">Formulario de contacto</a></li><!-- PENDIENTE: volver a sumar WhatsApp cuando esté configurado. --></ul></div>
     </div>
-    <!-- PENDIENTE: redactar y enlazar Aviso legal, Política de privacidad y Política de cookies antes de publicar. -->
-    <div class="legal"><span>© 2026 Seiri · Desde España al mundo</span><span><a href="#aviso-legal">Aviso legal</a> · <a href="#privacidad">Privacidad</a> · <a href="#cookies">Cookies</a></span></div>
+    <div class="legal"><span>© 2026 Seiri · Desde España al mundo</span><span><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span></div>
   </div>
 </footer>
 
@@ -1065,7 +1085,8 @@ p{margin:0}
     setTimeout(() => $('#f-name').focus({preventScroll:true}), reduce ? 0 : 600);
   }));
 
-  /* Formulario */
+  /* Formulario: envía a Google Sheets mediante Apps Script */
+  const FORM_URL = 'https://script.google.com/macros/s/AKfycbyPJMdZiSJwQLjO5MZZXxQDs6zVZHVp6EL1BKXUw7vFtyGlAK3yPuxIHULxcNKtKL3W/exec';
   $('#contact-form').addEventListener('submit', e => {
     e.preventDefault();
     const err = $('#f-err'); err.textContent = '';
@@ -1084,9 +1105,30 @@ p{margin:0}
     const text = 'Hola, Seiri. Me gustaría coordinar una llamada de 20 minutos.\n\n' +
       (interes ? 'Me interesa: ' + interes + '\n' : '') +
       'Empresa: ' + v('f-company') + ' · Equipo: ' + v('f-size') + '\n\n' + v('f-msg') + '\n\n' + v('f-name') + ' · ' + v('f-email');
-    $('#f-preview').textContent = text;
-    $('#f-ready').hidden = false;
-    $('#f-copy').focus();
+    if ($('#f-web').value) return; // campo trampa: solo lo completan los robots
+    const btn = $('#f-send'), btnHTML = btn.innerHTML;
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    $('#f-ok').hidden = true; $('#f-ready').hidden = true;
+    const data = new URLSearchParams({
+      nombre: v('f-name'), email: v('f-email'), empresa: v('f-company'), equipo: v('f-size'),
+      interes: interes, mensaje: v('f-msg'), consentimiento: 'si', web: ''
+    });
+    const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 20000);
+    const fail = () => {
+      $('#f-preview').textContent = text;
+      $('#f-mailto').href = 'mailto:hola@seiri-studio.com?subject=' + encodeURIComponent('Consulta web · ' + v('f-company')) + '&body=' + encodeURIComponent(text);
+      $('#f-ready').hidden = false; $('#f-ready').focus();
+    };
+    fetch(FORM_URL, { method: 'POST', body: data, signal: ctrl.signal })
+      .then(r => r.json())
+      .then(res => {
+        if (!res || !res.ok) throw new Error('respuesta');
+        $('#f-ok-mail').textContent = v('f-email');
+        $('#contact-form').reset();
+        $('#f-ok').hidden = false; $('#f-ok').focus();
+      })
+      .catch(fail)
+      .finally(() => { clearTimeout(timer); btn.disabled = false; btn.innerHTML = btnHTML; });
   });
   $('#f-copy').addEventListener('click', e => {
     const btn = e.currentTarget, done = () => { btn.textContent = 'Copiado'; setTimeout(() => btn.textContent = 'Copiar mensaje', 1600); };
