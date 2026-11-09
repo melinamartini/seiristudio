@@ -9,13 +9,13 @@
 <meta property="og:url" content="https://seiri-studio.com/">
 <meta property="og:site_name" content="Seiri">
 <meta property="og:title" content="Seiri · Estudio de gestión estratégica y operativa">
-<meta property="og:description" content="Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.">
+<meta property="og:description" content="Ayudamos a agencias, consultoras y productoras a organizar el trabajo de sus equipos para que los proyectos avancen con menos supervisión de la dirección.">
 <meta name="theme-color" content="#263343">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 <title>Seiri · Estudio de gestión estratégica y operativa</title>
-<meta name="description" content="Diagnosticamos y diseñamos mejoras operativas para empresas de servicios que trabajan por proyectos. Implementamos procesos con tu equipo para reducir la dependencia de la dirección.">
+<meta name="description" content="Ayudamos a agencias, consultoras y productoras a organizar el trabajo de sus equipos para que los proyectos avancen con menos supervisión de la dirección.">
 <style>
 @font-face{font-family:"Bricolage Grotesque";src:url(bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url(instrument-sans.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
@@ -23,7 +23,6 @@
 @font-face{font-family:"Instrument Serif";src:url(instrument-serif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"DM Mono";src:url(dm-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"DM Mono";src:url(dm-mono-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
-
 /* Concepto: bloques de color de la paleta (crema 45 · tinta 25 · vino 15 · cielo 10 · arena 5) que se alternan
    con ritmo claro / color / oscuro. Tarjetas suaves, signos de orden ([ ], casillas, guion) como único adorno. */
 :root{
@@ -768,6 +767,105 @@ p{margin:0}
 .legal-note[open] summary::after{content:" ▴"}
 .legal-note p{margin:8px 0 0}
 .legal-note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+/* ===================== MVP · dos servicios, Sobre Seiri como pilar ===================== */
+.site-header .nav a{white-space:nowrap}
+/* Portada */
+.hero h1.h1-mvp{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.02;font-weight:800;margin:18px 0 22px}
+.hero .lede{max-width:40ch}
+.hero .who-for{margin-top:14px;font-size:1rem;color:var(--muted);max-width:44ch}
+/* ¿Te resuena? */
+.pain p.pain-t{font-style:normal}
+.pain .q{font-family:var(--f-serif);font-style:italic;font-size:1.6rem;line-height:1;opacity:.55}
+/* Servicios */
+.svc2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.sv{border-radius:var(--r-block);overflow:hidden;background:var(--crema-2);box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr auto}
+.sv-head{padding:28px 28px 24px;display:grid;gap:10px}
+.sv-1 .sv-head{background:var(--cielo)}
+.sv-2 .sv-head{background:var(--tinta);color:var(--crema)}
+.sv-head h3{font-size:clamp(1.6rem,2.6vw,2.1rem)}
+.sv-head p{font-family:var(--f-display);font-weight:600;font-size:1.12rem;line-height:1.3}
+.sv-body{padding:24px 28px 8px}
+.sv-body .incl{font-size:1rem;gap:12px}
+@media (min-width:861px){.svc2{grid-template-rows:auto 1fr auto}.sv{grid-row:1/4;grid-template-rows:subgrid}}
+@media (max-width:860px){.svc2{grid-template-columns:1fr;max-width:620px}}
+/* Sobre Seiri */
+.about{background:var(--cielo);padding-block:clamp(64px,8vw,100px) clamp(52px,6vw,80px)}
+.about .eyebrow{color:var(--vino)}
+.about h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:14px 0 22px}
+.about .concept{font-family:var(--f-display);font-weight:600;font-size:clamp(1.15rem,1.8vw,1.35rem);line-height:1.4;color:var(--tinta);margin-bottom:18px}
+.about .bio{display:grid;gap:14px;font-size:1.06rem;line-height:1.6;color:var(--tinta-2)}
+.about .bio strong{color:var(--tinta)}
+.about .meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.about .from-line{display:inline-flex;align-items:center;gap:10px;padding:.45em 1.1em .45em .5em;border-radius:999px;background:var(--crema-2);font-weight:600}
+/* Testimonios y FAQ */
+.testi{background:var(--crema)}
+.faq{background:var(--arena-2)}
+.pend-inline{font-family:var(--f-mono);font-size:.85em;color:var(--vino);background:rgba(107,33,56,.07);border:1.5px dashed rgba(107,33,56,.45);border-radius:6px;padding:0 .35em;font-style:normal}
+.t-card blockquote{padding-right:48px}
+.t-card:nth-child(2) .pend-inline,.footer .pend-inline{color:var(--cielo);background:rgba(183,216,245,.1);border-color:rgba(183,216,245,.5)}
+/* Portada: sello [S] */
+.seal{position:relative;width:min(100%,420px);aspect-ratio:1/1;justify-self:center;display:grid;place-items:center}
+.seal .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 60s linear infinite}
+.seal .ring text{font:500 15.5px var(--f-mono);letter-spacing:.18em;fill:var(--vino)}
+.seal::before{content:"";position:absolute;inset:16%;border-radius:50%;border:1.5px dashed rgba(107,33,56,.35)}
+.seal .core{width:56%;aspect-ratio:1/1;border-radius:50%;background:var(--vino);color:var(--crema);display:grid;grid-auto-flow:column;place-content:center;font:800 clamp(3.4rem,8vw,6rem)/1 var(--f-display);letter-spacing:-.01em;box-shadow:0 30px 60px -30px rgba(107,33,56,.7)}
+.seal .core .b{color:var(--cielo)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.seal .ring{animation:none}}
+@media (max-width:860px){.seal{width:min(100%,280px);justify-self:start}}
+/* ¿Te resuena?: icono en círculo */
+.pain .pic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.6);color:var(--vino)}
+.pain .pic svg{width:24px;height:24px}
+.pain:nth-child(3) .pic{background:var(--cielo-2)}
+.pain:nth-child(4) .pic{background:rgba(243,231,215,.16);color:var(--cielo)}
+.pain p.pain-t{padding-right:0}
+/* Servicios: pie alineado en columna */
+.sv-foot{padding:20px 28px 28px;display:grid;gap:14px;justify-items:start;align-content:start;border-top:1px dashed var(--line);margin-top:14px}
+.sv-foot .plazo{display:grid;gap:2px}
+.sv-foot .plazo span{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sv-foot .plazo b{font-family:var(--f-display);font-size:1.15rem}
+/* Seguimiento: tarjeta alargada */
+.follow{margin-top:22px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;background:var(--arena);border-radius:var(--r-card);padding:20px 24px}
+.follow .pic{width:52px;height:52px;border-radius:50%;background:var(--crema-2);color:var(--vino);display:grid;place-items:center}
+.follow .pic svg{width:26px;height:26px}
+.follow p{font-size:1.05rem;line-height:1.45;color:var(--tinta-2)}
+.follow b{color:var(--tinta);font-weight:700;font-family:var(--f-display)}
+@media (max-width:640px){.follow{grid-template-columns:auto minmax(0,1fr)}.follow .link-btn{grid-column:1/-1;justify-self:start}}
+/* Sobre Seiri: retrato corporativo */
+.about .wrap{display:grid;gap:clamp(28px,4vw,44px)}
+.about-head{max-width:780px}
+.about h2{margin:14px 0 18px}
+.person{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;background:var(--crema-2);border-radius:var(--r-block);padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
+.portrait{margin:0;display:grid;gap:12px;justify-items:start}
+.portrait img{width:100%;max-width:240px;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:20px;display:block}
+.portrait figcaption{display:grid;gap:2px}
+.portrait figcaption b{font-family:var(--f-display);font-size:1.15rem}
+.portrait figcaption span{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vino)}
+.person .bio{min-width:0;display:grid;gap:14px;font-size:1.06rem;line-height:1.6;color:var(--tinta-2)}
+.person .from-line{display:inline-flex;align-items:center;gap:10px;justify-self:start;padding:.45em 1.1em .45em .5em;border-radius:999px;background:var(--cielo);font-weight:600;color:var(--tinta)}
+@media (max-width:760px){.person{grid-template-columns:1fr}.portrait img{max-width:200px}}
+/* Contacto: así empezamos */
+.start{margin-top:26px;display:grid;gap:10px;background:rgba(243,231,215,.08);border-radius:20px;padding:18px 20px;max-width:46ch}
+.start-k{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cielo)}
+.start ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.start li{display:flex;gap:12px;align-items:flex-start;line-height:1.45}
+.start .dot{width:10px;height:10px;border-radius:50%;background:var(--cielo);margin-top:.5em;flex:none}
+
+/* Ajustes de textos v2 */
+.sv-note{margin-top:14px;font-size:.95rem;line-height:1.45;color:var(--vino);font-weight:600}
+.t-tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vino);padding-right:48px}
+.t-card:nth-child(2) .t-tag{color:var(--cielo)}
+@media (min-width:901px){.t-grid{grid-template-rows:auto 1fr auto}.t-card{grid-row:1/4;grid-template-rows:subgrid}}
+.f-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.f-links{list-style:none;margin:0;padding:0;display:flex;gap:10px 26px;flex-wrap:wrap}
+.footer .legal{margin-top:34px}
+.suena .sec-head{margin-bottom:clamp(26px,3vw,40px)}
+.pain h3.pain-h{font-family:var(--f-display);font-weight:700;font-size:clamp(1.12rem,1.5vw,1.28rem);line-height:1.2;letter-spacing:-.01em;margin:0}
+.pain p.pain-t.pain-d{font-family:var(--f-text);font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0;opacity:.9;padding-right:0}
+@media (min-width:961px){.pain-grid{grid-template-rows:auto auto 1fr}.pain{grid-row:span 3}}
+.about-head{max-width:none}
+.about .concept{font-size:clamp(1.08rem,1.6vw,1.25rem);line-height:1.5;margin-bottom:12px}
+.about .concept+.concept{margin-top:22px}
 </style>
 </head>
 <body>
@@ -775,12 +873,12 @@ p{margin:0}
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="Seiri, inicio"><span class="br">[</span>SEIRI<span class="br">]</span></a>
     <nav class="nav" aria-label="Principal">
-      <a href="#proceso">Proceso</a><a href="#servicios">Servicios</a><a href="#sobre">Sobre Seiri</a><a href="#contacto">Contacto</a>
+      <a href="#servicios">Servicios</a><a href="#sobre">Quién está detrás</a><a href="#preguntas">Preguntas</a>
     </nav>
     <a class="btn btn-vino btn-sm header-cta" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-panel">Menú</button>
     <div class="mobile-panel" id="mobile-panel" hidden>
-      <a href="#proceso">Proceso</a><a href="#servicios">Servicios</a><a href="#sobre">Sobre Seiri</a><a href="#contacto">Contacto</a>
+      <a href="#servicios">Servicios</a><a href="#sobre">Quién está detrás</a><a href="#preguntas">Preguntas</a><a href="#contacto">Hablemos</a>
     </div>
   </div>
 </header>
@@ -792,169 +890,120 @@ p{margin:0}
     <div class="wrap">
       <div>
         <span class="chip-eyebrow eyebrow"><span class="br">[</span>Estudio de gestión estratégica y operativa<span class="br">]</span></span>
-        <h1 class="h1-v3">Tu empresa no necesita que estés en <span class="hl"><span class="br">[</span>todo<span class="br">]</span></span>. <span class="sub">Necesita una forma de trabajar que no dependa de ti en cada paso.</span></h1>
-        <p class="lede">Ayudamos a empresas de servicios en crecimiento a organizar sus procesos y definir responsabilidades, para que el equipo avance con autonomía y la dirección pueda delegar con confianza.</p>
-        <div class="actions">
-          <a class="btn btn-vino" href="#contacto">Cuéntanos tu caso <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="#proceso">Ver cómo trabajamos</a>
-        </div>
+        <h1 class="h1-mvp">Tu empresa no necesita que estés en <span class="hl"><span class="br">[</span>todo<span class="br">]</span></span>.</h1>
+        <p class="lede">Ayudamos a agencias, consultoras y productoras a organizar el trabajo de sus equipos para que los proyectos avancen con menos supervisión de la dirección.</p>
+        <div class="actions"><a class="btn btn-vino" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a></div>
       </div>
-      <div class="stage" aria-hidden="true">
-        <div class="sheet s1"><span class="w">Audit</span><ul><li class="ok">Entrevistas</li><li class="ok">Prioridades</li></ul><div class="iso"><span><span class="b">[</span>S<span class="b">]</span></span></div></div>
-        <div class="sheet s2"><span class="w">Method</span><ul><li class="ok">Procesos</li><li class="ok">Roles</li><li class="ok">Herramientas</li></ul></div>
-        <div class="sheet s3"><span class="w">Sprint</span><ul><li class="ok">Implementación</li><li class="ok">Soporte</li></ul></div>
+      <div class="seal" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 400 400"><defs><path id="circ" d="M200,200 m-158,0 a158,158 0 1,1 316,0 a158,158 0 1,1 -316,0"/></defs>
+          <text><textPath href="#circ" textLength="980">ESTUDIO DE GESTIÓN ESTRATÉGICA Y OPERATIVA · ORDEN PARA DAR EL PRÓXIMO SALTO ·</textPath></text></svg>
+        <div class="core"><span class="b">[</span>S<span class="b">]</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 2 · BANDA -->
-  <div class="ribbon" aria-hidden="true"><div class="track">
-    <span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span><span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span>
-    <span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span><span>claridad</span><span class="b">[ ]</span><span>alivio</span><span class="b">[ ]</span><span>control</span><span class="b">[ ]</span><span>confianza</span><span class="b">[ ]</span>
-  </div></div>
-
-  <!-- 3 · ¿TE SUENA? -->
-  <section class="suena" id="te-suena" aria-labelledby="suena-t">
+  <!-- 2 · ¿TE RESUENA? -->
+  <section class="suena" id="te-pasa" aria-labelledby="suena-t">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">[ Lo que vemos en empresas de servicios ]</span>
-        <h2 id="suena-t">Tu empresa funciona.<br>Pero funciona gracias a <span class="hl"><span class="br">[</span>ti<span class="br">]</span></span>.</h2>
+        <h2 id="suena-t">¿Te pasa <span class="hl"><span class="br">[</span>esto<span class="br">]</span></span>?</h2>
       </div>
       <ul class="pain-grid" style="list-style:none;margin:0;padding:0">
-        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">Las decisiones del día a día requieren tu aprobación.</p><p class="pain-d">Tu equipo necesita consultarte para poder avanzar.</p></li>
-        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">Cada proyecto exige volver a organizar cómo trabajar.</p><p class="pain-d">Los criterios, las tareas y los responsables se definen una y otra vez.</p></li>
-        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">La información está repartida entre mensajes, correos y llamadas.</p><p class="pain-d">Saber qué se acordó y qué falta hacer requiere revisar varios canales.</p></li>
-        <li class="pain"><span class="pain-mark" aria-hidden="true">[ ]</span><p class="pain-t">La continuidad depende de algunas personas clave.</p><p class="pain-d">Cuando alguien no está, cuesta retomar sus tareas y mantener el ritmo.</p></li>
+        <li class="pain"><span class="pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4L19 7"/></svg></span><h3 class="pain-h">Aprobaciones</h3><p class="pain-t pain-d">Si no lo apruebo yo, el proyecto se para.</p></li>
+        <li class="pain"><span class="pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg></span><h3 class="pain-h">Proyectos</h3><p class="pain-t pain-d">Cada vez que entra un proyecto, volvemos a organizarlo todo desde cero.</p></li>
+        <li class="pain"><span class="pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span><h3 class="pain-h">Información</h3><p class="pain-t pain-d">Para saber en qué quedó algo, hay que buscar en mensajes y correos o preguntar a quien estuvo en la reunión.</p></li>
+        <li class="pain"><span class="pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 9.2a2.9 2.9 0 1 1 4.1 2.6c-.8.4-1.3 1.1-1.3 2V15"/><circle cx="12" cy="18.2" r=".6" fill="currentColor"/></svg></span><h3 class="pain-h">Dependencia del equipo</h3><p class="pain-t pain-d">Si falta alguien clave, cuesta saber qué queda pendiente y cómo seguir.</p></li>
       </ul>
-      <p class="pain-line">Tu empresa creció. Es momento de adaptar la forma de trabajar a sus nuevas necesidades.</p>
     </div>
   </section>
 
-  <!-- 4 · LO QUE LOGRAS -->
-  <section class="logras" id="logras" aria-labelledby="logras-t">
-    <div class="wrap">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow">[ Lo que cambia ]</span>
-          <h2 id="logras-t">Más claridad en el día a día para tu <span class="hl"><span class="br">[</span>equipo<span class="br">]</span></span>.</h2>
-        </div>
-        <ul class="incl logras-list"><li>Las propuestas se preparan con criterios compartidos.</li><li>Cada persona sabe qué hacer, cuándo y con quién coordinar.</li><li>Las entregas tienen momentos de revisión para detectar ajustes a tiempo.</li><li>Quienes se suman cuentan con una guía para entender cómo se trabaja.</li></ul>
-      </div>
-      <div class="stack3">
-        <div class="st"><b>Autonomía</b><span>El trabajo avanza sin que tengas que intervenir en cada paso.</span></div>
-        <div class="st"><b>Claridad</b><span>Puedes ver en qué está cada proyecto y qué necesita atención.</span></div>
-        <div class="st"><b>Tiempo</b><span>Recuperas espacio para planificar, desarrollar oportunidades y acompañar el crecimiento de tu empresa.</span></div>
-      </div>
-      <p class="logras-line">Priorizamos las mejoras según lo que necesita tu empresa y el alcance acordado.</p>
-    </div>
-  </section>
-
-  <nav class="unav" id="unav" aria-label="Secciones"><div class="in">
-    <a href="#proceso" data-u="proceso">Proceso</a><a href="#servicios" data-u="servicios">Servicios</a><a href="#contacto" data-u="contacto">Contacto</a>
-  </div></nav>
-
-  <!-- 5 · EL PROCESO -->
-  <section class="proceso" id="proceso" aria-labelledby="proceso-t">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">[ El proceso ]</span>
-        <h2 id="proceso-t">Nuestro <span class="hl"><span class="br">[</span>método<span class="br">]</span></span> de trabajo</h2>
-        <p class="lede">Definimos contigo por dónde empezar y acordamos un plan de trabajo con prioridades, alcance y entregables claros.</p>
-      </div>
-      <ol class="p-steps">
-        <li class="p-step a"><span class="dot">01</span><span class="verb">Observamos</span><p class="what">A través de una reunión inicial y entrevistas al equipo, entendemos cómo se organiza el trabajo y dónde aparecen las dificultades.</p><button type="button" class="to-svc" data-goto="svc-audit">Seiri Audit <span aria-hidden="true">→</span></button></li>
-        <li class="p-step a"><span class="dot">02</span><span class="verb">Clasificamos</span><p class="what">Identificamos qué funciona bien, qué necesita mejorar y qué conviene abordar primero.</p><button type="button" class="to-svc" data-goto="svc-audit">Seiri Audit <span aria-hidden="true">→</span></button></li>
-        <li class="p-step m"><span class="dot">03</span><span class="verb">Diseñamos</span><p class="what">Definimos cómo se organiza el trabajo, quién asume cada responsabilidad y qué herramientas necesita el equipo, con una hoja de ruta para ponerlo en práctica.</p><button type="button" class="to-svc" data-goto="svc-method">Seiri Method <span aria-hidden="true">→</span></button></li>
-        <li class="p-step s"><span class="dot">04</span><span class="verb">Implementamos</span><p class="what">Llevamos el diseño a la práctica: configuramos las herramientas y guiamos al equipo para incorporar el proceso a su trabajo, con documentación y soporte durante la puesta en marcha.</p><button type="button" class="to-svc" data-goto="svc-sprint">Seiri Sprint <span aria-hidden="true">→</span></button></li>
-      </ol>
-      <div class="franja"><span class="fr-main"><span class="fr-l">Desde el inicio sabes qué vamos a resolver,</span> <span class="fr-l">qué vas a recibir y en qué plazos.</span></span><b class="fr-hl">Trabajamos por proyecto, con un alcance definido y sin cuotas mensuales.</b></div>
-    </div>
-  </section>
-
-  <!-- 6 · SERVICIOS -->
+  <!-- 3 · SERVICIOS -->
   <section class="servicios" id="servicios" aria-labelledby="servicios-t">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">[ Servicios ]</span>
-        <h2 id="servicios-t">Tres servicios, según lo que necesite tu <span class="hl"><span class="br">[</span>operación<span class="br">]</span></span>.</h2>
+        <h2 id="servicios-t"><span class="hl" style="white-space:normal"><span style="white-space:nowrap"><span class="br">[</span>Diagnóstico</span> e <span style="white-space:nowrap">implementación<span class="br">]</span></span></span></h2>
       </div>
-
-      <div class="svc-grid" id="svc-grid">
-        <article class="card svc-audit col-1" id="svc-audit" data-interes="Seiri Audit">
-          <div class="c-head"><div class="card-top"><span class="tag t-a">Audit · Diagnóstico</span></div><h4><span class="c-name">Diagnóstico de operaciones</span><span class="sub-name">Seiri Audit</span></h4><p class="c-lead">Una mirada integral para saber qué mejorar y por dónde empezar.</p></div>
-          <p class="c-note note">Analizamos cómo se organiza el trabajo, identificamos los principales puntos de mejora y te entregamos un diagnóstico con prioridades concretas.</p>
-          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-audit"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-audit" hidden><ul class="incl"><li>Una reunión inicial de 60 minutos con la dirección.</li><li>Dos entrevistas individuales de hasta 15 minutos cada una: una con quien lidera o coordina proyectos y otra con quien ejecuta las tareas o brinda apoyo operativo.</li><li>Revisión de las herramientas de gestión, los documentos de trabajo y ejemplos de proyectos recientes, para analizar cómo se organizan las tareas, las entregas y el seguimiento.</li><li>Un diagnóstico ejecutivo con los principales puntos de mejora, sus posibles causas y las prioridades recomendadas.</li><li>Una sesión de devolución con la dirección para presentar los hallazgos y los próximos pasos.</li></ul></div></div>
-          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 5 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Audit">Quiero un diagnóstico →</a><p class="price-note">Propuesta personalizada según el tamaño del equipo y las áreas a analizar.</p></div>
+      <div class="svc2">
+        <article class="sv sv-1" id="svc-diag">
+          <div class="sv-head"><h3>Diagnóstico operativo</h3><p>Identifica qué está frenando el trabajo y qué conviene resolver primero.</p></div>
+          <div class="sv-body"><ul class="incl">
+            <li>Una reunión de 45 minutos con la dirección y dos entrevistas con personas del equipo.</li>
+            <li>Revisamos cómo se organizan las tareas, qué herramientas usan y dónde se pierde información.</li>
+            <li>Recibes un informe con lo que funciona, los principales problemas y un plan de acción ordenado por prioridad. Lo revisamos contigo.</li>
+          </ul></div>
+          <div class="sv-foot"><p class="plazo"><span>Plazo</span><b>1 semana</b></p><a class="link-btn" href="#contacto" data-pick="Diagnóstico operativo">Quiero un diagnóstico →</a></div>
         </article>
-        <div class="fit-box fit-audit col-1"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="fit-k">Es para ti si</span><p>Buscas claridad para tomar decisiones y enfocar los próximos cambios.</p></div>
-        <article class="card svc-method col-2" id="svc-method" data-interes="Seiri Method">
-          <div class="c-head"><div class="card-top"><span class="tag t-m">Method · Diseño</span></div><h4><span class="c-name">Diseño del método de trabajo</span><span class="sub-name">Seiri Method</span></h4><p class="c-lead">Del diagnóstico a los procesos que tu empresa necesita.</p></div>
-          <p class="c-note note">A partir de las prioridades identificadas en la auditoría, diseñamos cómo deben funcionar los procesos seleccionados: qué se hace, quién es responsable, cómo se coordinan las tareas y qué criterios se siguen.<span class="note-2">Entregamos a la dirección los procesos desarrollados y documentados, junto con una hoja de ruta para implementarlos con su equipo.</span></p>
-          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-method"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-method" hidden><ul class="incl"><li>Hasta tres sesiones de trabajo de 30 minutos con referentes del equipo para profundizar en los procesos seleccionados y validar las decisiones de diseño.</li><li>Los procesos diseñados y documentados, con pasos, responsables, criterios de trabajo y puntos de revisión.</li><li>La definición de roles y formas de coordinación necesarios para esos procesos.</li><li>Las recomendaciones de herramientas y sus criterios de uso.</li><li>El diseño del seguimiento: qué información registrar y cómo visualizar tareas, responsables y avances.</li><li>Una hoja de ruta para la implementación, con prioridades, dependencias y acciones a cargo de la dirección y del equipo.</li><li>Una sesión de entrega a la dirección para explicar el diseño y orientar su implementación.</li><li>Una sesión de revisión a los 30 días de la entrega y una ronda de ajustes sobre el diseño acordado.</li></ul></div></div>
-          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 20 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Method">Quiero diseñar mis procesos →</a><p class="price-note">Propuesta personalizada según la cantidad de procesos a diseñar y las áreas que participan.</p></div>
+        <article class="sv sv-2" id="svc-impl">
+          <div class="sv-head"><h3>Implementación</h3><p>Ponemos en marcha los cambios acordados y preparamos a tu equipo para seguir aplicándolos.</p></div>
+          <div class="sv-body"><ul class="incl">
+            <li>Elegimos qué procesos trabajar, definimos quién se ocupa de cada paso y ajustamos las herramientas.</li>
+            <li>Documentamos la forma de trabajo y la practicamos con tu equipo.</li>
+            <li>Incluye dos semanas de soporte y una revisión a los 30 días, ambas desde la entrega final.</li>
+          </ul><p class="sv-note">Si ya tienes claro qué quieres mejorar, puedes empezar aquí. Incluimos una revisión inicial del proceso.</p></div>
+          <div class="sv-foot"><p class="plazo"><span>Plazo</span><b>Unas 4 semanas por proceso</b></p><a class="link-btn" href="#contacto" data-pick="Implementación">Quiero implementar los cambios →</a></div>
         </article>
-        <div class="fit-box fit-method col-2"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><span class="fit-k">Es para ti si</span><p>Necesitas transformar el diagnóstico en una forma de trabajar concreta y cuentas con capacidad interna para llevarla a la práctica.</p></div>
-        <article class="card svc-sprint col-3" id="svc-sprint" data-interes="Seiri Sprint">
-          <div class="c-head"><div class="card-top"><span class="tag t-s">Sprint · Implementación de un proceso</span></div><h4><span class="c-name">Implementación de un proceso</span><span class="sub-name">Seiri Sprint</span></h4><p class="c-lead">Una mejora concreta, puesta en marcha con tu equipo.</p></div>
-          <p class="c-note note">Rediseñamos e implementamos un proceso prioritario, con las herramientas y la documentación necesarias para incorporarlo al trabajo diario. Acordamos su alcance y cómo vamos a comprobar que funciona.</p>
-          <div class="c-incl"><button type="button" class="c-more" aria-expanded="false" aria-controls="incl-sprint"><span>Qué incluye</span><span class="faq-ic" aria-hidden="true"></span></button><div class="c-list" id="incl-sprint" hidden><ul class="incl"><li>Una sesión inicial de 30 minutos para conocer el proceso y acordar el alcance de la implementación.</li><li>Un proceso prioritario rediseñado y puesto en marcha, con pasos y responsables definidos.</li><li>Las herramientas necesarias configuradas para el proceso acordado.</li><li>Una guía de uso con los pasos del proceso y las indicaciones para el equipo.</li><li>Una sesión práctica de 60 minutos para aprender a aplicar el proceso y utilizar las herramientas.</li><li>Dos semanas de soporte asíncrono desde la puesta en marcha, para resolver dudas de uso y acompañar la adopción.</li><li>Una sesión de revisión a los 30 días de la puesta en marcha y una ronda de ajustes sobre el proceso implementado.</li></ul></div></div>
-          <div class="card-foot"><p class="c-plazo"><span>Plazo de entrega</span> 20 días hábiles</p><a class="link-btn" href="#contacto" data-pick="Seiri Sprint">Quiero implementar un proceso →</a><p class="price-note">Propuesta personalizada según las etapas del proceso y las herramientas a configurar.</p></div>
-        </article>
-        <div class="fit-box fit-sprint col-3"><span class="fit-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="fit-k">Es para ti si</span><p>Tienes una necesidad identificada y buscas apoyo para implementar la solución sin sobrecargar a tu equipo.</p></div>
       </div>
-      <div class="start-cta">
-        <h3>Encontremos por dónde <span class="hl"><span class="br">[</span>empezar<span class="br">]</span></span>.</h3>
-        <p>Cuéntanos qué necesitas y analizamos la mejor manera de ayudarte.</p>
-        <a class="btn btn-vino" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
+      <div class="follow">
+        <span class="pic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9 14.5l2 2 4-4"/></svg></span>
+        <p><b style="display:block;margin-bottom:4px">¿Quieres que sigamos cerca después?</b>Sumamos sesiones de seguimiento mensuales. Las mantienes solo mientras te sirvan.</p>
+        <a class="link-btn" href="#contacto" data-pick="Seguimiento mensual">Consultar →</a>
       </div>
     </div>
   </section>
 
-
-  <!-- 8 · SOBRE SEIRI -->
-  <section class="sobre" id="sobre" lang="es">
+  <!-- 4 · SOBRE SEIRI -->
+  <section class="about" id="sobre" aria-labelledby="sobre-t">
     <div class="wrap">
-      <span class="eyebrow sobre-tag" style="color:var(--vino)">[ Sobre Seiri ]</span>
-      <div>
-        <p class="motto">El orden que permite dar el próximo <span class="hl"><span class="br">[</span>salto<span class="br">]</span></span>.</p>
+      <div class="about-head">
+        <span class="eyebrow">[ Sobre Seiri ]</span>
+        <h2 id="sobre-t">Quién está detrás del <span class="hl"><span class="br">[</span>estudio<span class="br">]</span></span></h2>
+        <p class="concept">Nuestro nombre viene de las 5S, un método japonés de organización del trabajo.<br>El primer paso consiste en <em class="serif">clasificar</em> los materiales y documentos del lugar de trabajo para identificar cuáles se necesitan.</p>
+        <p class="concept">Con tu equipo hacemos una revisión similar:<br>vemos cómo se reparten las tareas, dónde se guarda la información y qué decisiones requieren aprobación. A partir de ahí, acordamos qué conviene mantener y qué se puede simplificar.</p>
       </div>
-      <div class="text">
-        <p>Seiri toma su nombre de la idea de clasificar, presente en la <strong>metodología japonesa 5S</strong>. Para nosotros, es un punto de partida: entender cómo se trabaja, identificar prioridades y dar una estructura clara a los procesos, la información y las responsabilidades.</p>
-        <p>Somos un equipo de profesionales con una trayectoria de más de <strong>15 años en gestión de proyectos y operaciones</strong>. Nuestra experiencia abarca desde la coordinación de proyectos simultáneos hasta la dirección de operaciones en distintas agencias.</p>
-        <p>Vivimos de cerca lo que ocurre cuando una empresa crece y su organización queda atrás: las urgencias se acumulan, coordinar consume cada vez más tiempo y demasiadas decisiones se concentran en pocas personas.</p>
-        <p><strong>Seiri nace de esa experiencia</strong>. Diseñamos procesos y criterios de trabajo que el equipo pueda consultar, aplicar y sostener, para que la dirección pueda delegar con confianza y dedicar más atención al desarrollo del negocio.</p>
-        <p class="from-line"><span class="globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.5 4 5.6 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.6-4-9s1.4-6.5 4-9z"/></svg></span><span>Desde España, al mundo.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9 · TESTIMONIOS · reales y autorizados (confirmado por Mel) -->
-  <section class="testi" id="testimonios">
-    <div class="wrap">
-      <div class="head">
-        <div class="sec-head" style="margin:0">
-          <span class="eyebrow" style="color:var(--vino)">[ Testimonios ]</span>
-          <h2>Experiencias con <span class="hl"><span class="br">[</span>Seiri<span class="br">]</span></span></h2>
+      <div class="person">
+        <figure class="portrait">
+          <img src="data:image/jpeg;base64,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" alt="Melina Martini, fundadora de Seiri" width="560" height="560">
+          <figcaption><b>Melina Martini</b><span>Fundadora de Seiri</span></figcaption>
+          <a class="btn btn-tinta btn-sm" href="https://www.linkedin.com/in/melinamartini/" target="_blank" rel="noopener">Ver perfil en LinkedIn <span class="arr" aria-hidden="true">→</span></a>
+        </figure>
+        <div class="bio">
+          <p><strong>Melina Martini</strong> es la fundadora de SEIRI. Tiene más de 14 años de experiencia profesional en turismo, eventos y marketing digital. Ha liderado proyectos y operaciones para agencias, empresas e instituciones en Argentina y otros países de Latinoamérica. Hoy trabaja desde Sevilla, España.</p>
+          <p>Su recorrido incluye campañas de marketing, eventos corporativos, activaciones de marca y programas de formación para empresas turísticas. Ha dirigido proyectos desde la planificación hasta la entrega y, al frente de operaciones, ha coordinado equipos, presupuestos y prioridades de varios proyectos a la vez.</p>
+          <p>En SEIRI aplicamos esa experiencia para ayudar a los equipos a definir quién se ocupa de cada tarea, organizar el seguimiento de sus proyectos y delegar con más claridad. Según el proyecto, sumamos profesionales de operaciones, marketing y gestión comercial.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 5 · TESTIMONIOS -->
+  <section class="testi" id="testimonios">
+    <div class="wrap">
+      <div class="head"><div class="sec-head" style="margin:0">
+        <span class="eyebrow" style="color:var(--vino)">[ Testimonios ]</span>
+        <h2>Lo que dicen quienes trabajaron <span class="hl"><span class="br">[</span>nosotros<span class="br">]</span></span></h2>
+      </div></div>
       <div class="t-grid">
         <figure class="t-card" style="margin:0">
-          <blockquote>Melina y su equipo nos ayudaron a ordenar cómo trabajamos y a dejar más claro quién se ocupa de cada tema. A mí, en particular, me ayudó a delegar y a estar menos pendiente de la operación diaria. Entendieron nuestra dinámica y propusieron cambios que pudimos llevar a la práctica ágilmente.</blockquote>
-          <figcaption class="t-who"><span class="t-av">O</span><span><b>Osvaldo</b><span>CEO · Empresa constructora</span></span></figcaption>
+          <span class="t-tag">Delegación y responsabilidades</span>
+          <blockquote>Melina y su equipo nos ayudaron a ordenar cómo trabajamos y a dejar más claro quién se ocupa de cada tema. A mí me ayudó a delegar y a estar menos pendiente de la operación diaria. Entendieron nuestra dinámica y propusieron cambios que pudimos llevar a la práctica.</blockquote>
+          <figcaption class="t-who"><span class="t-av">O</span><span><b>Osvaldo</b><span>CEO de una Empresa Constructora</span></span></figcaption>
         </figure>
         <figure class="t-card" style="margin:0">
-          <blockquote>Teníamos varias ideas para mejorar nuestra organización pero estábamos intentando avanzar con todas a la vez. La auditoría nos ayudó a poner prioridades. Nos llevamos una explicación concreta de qué convenía revisar primero y qué podía esperar. ¡Muchas gracias!</blockquote>
-          <figcaption class="t-who"><span class="t-av">V</span><span><b>Victoria</b><span>Responsable de Operaciones · Agencia de Marketing</span></span></figcaption>
+          <span class="t-tag">Diagnóstico y prioridades</span>
+          <blockquote>Teníamos varias ideas para mejorar nuestra organización y estábamos intentando avanzar con todas a la vez. La auditoría nos ayudó a ordenar las prioridades. Nos llevamos una explicación concreta de qué convenía revisar primero y qué podía esperar.</blockquote>
+          <figcaption class="t-who"><span class="t-av">V</span><span><b>Victoria</b><span>Responsable de Operaciones en una Agencia de Marketing</span></span></figcaption>
         </figure>
         <figure class="t-card" style="margin:0">
-          <blockquote>En la agencia hacíamos muchas cosas manualmente y cada persona resolvía las gestiones con su propio criterio. Seiri nos ayudó a ordenar los procesos y acordar una misma forma de trabajar. Estamos muy contentos con el resultado.</blockquote>
-          <figcaption class="t-who"><span class="t-av">A</span><span><b>Antonio</b><span>Director · Productora de eventos</span></span></figcaption>
+          <span class="t-tag">Organización de procesos</span>
+          <blockquote>Hacíamos muchas cosas manualmente y cada persona resolvía las gestiones con su propio criterio. Melina nos ayudó a ordenar los procesos y a acordar una misma forma de trabajar.</blockquote>
+          <figcaption class="t-who"><span class="t-av">A</span><span><b>Antonio</b><span>Director de una Productora de eventos</span></span></figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- 10a · PREGUNTAS FRECUENTES -->
+  <!-- 6 · PREGUNTAS -->
   <section class="faq" id="preguntas">
     <div class="wrap">
       <div class="sec-head">
@@ -962,36 +1011,25 @@ p{margin:0}
         <h2>Preguntas <span class="hl"><span class="br">[</span>frecuentes<span class="br">]</span></span></h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b1" aria-expanded="false" aria-controls="faq-p1"><span>¿Por dónde empezamos?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p1" role="region" aria-labelledby="faq-b1"><p>Con una llamada de 20 minutos para conocer tu empresa, entender qué necesitas y orientarte sobre cómo avanzar. Habitualmente empezamos con Seiri Audit. Si ya tienes una necesidad concreta y bien definida, podemos evaluar un Sprint directamente.</p></div></div>
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b3" aria-expanded="false" aria-controls="faq-p3"><span>¿Tenemos que usar una herramienta concreta?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p3" role="region" aria-labelledby="faq-b3"><p>Partimos de las herramientas que el equipo utiliza habitualmente. Evaluamos cómo aprovecharlas mejor y, cuando encontramos una alternativa que puede simplificar el trabajo, la proponemos y explicamos por qué. La elección considera las necesidades, el presupuesto y la facilidad de uso para el equipo.</p></div></div>
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b5" aria-expanded="false" aria-controls="faq-p5"><span>¿Ofrecen acompañamiento mensual?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p5" role="region" aria-labelledby="faq-b5"><p>Trabajamos por proyecto, con objetivos, entregables y plazos acordados. Cada servicio incluye sus instancias de revisión y soporte. Al finalizar, la documentación queda en manos de tu equipo para que pueda continuar con autonomía. Si surge una nueva necesidad, podemos trabajar juntos en otro proyecto.</p></div></div>
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b6" aria-expanded="false" aria-controls="faq-p6"><span>¿Qué incluye el precio?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p6" role="region" aria-labelledby="faq-b6"><p>El precio depende del alcance de cada proyecto. Cada propuesta detalla el precio, los entregables, el calendario por semanas y el soporte incluido. Si hacen falta herramientas de pago, lo aclaramos antes de empezar.</p></div></div>
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b8" aria-expanded="false" aria-controls="faq-p8"><span>¿El trabajo es en remoto?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p8" role="region" aria-labelledby="faq-b8"><p>Sí. Trabajamos en remoto con empresas de distintos países. Coordinamos las reuniones y los intercambios de información según los horarios del equipo.</p></div></div>
-        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b9" aria-expanded="false" aria-controls="faq-p9"><span>¿Utilizan inteligencia artificial?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p9" role="region" aria-labelledby="faq-b9"><p>Sí, cuando aporta una mejora concreta. Primero definimos el proceso, las responsabilidades y los criterios de trabajo; después evaluamos dónde incorporar IA. Aplicarla sobre tareas desorganizadas multiplica errores y acelera la confusión.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b1" aria-expanded="false" aria-controls="faq-p1"><span>¿Por dónde empezamos?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p1" role="region" aria-labelledby="faq-b1"><p>Por una llamada de 20 minutos para conocer tu empresa. Si no tienes claro qué falla, empezamos por el diagnóstico. Si ya lo sabes, vamos directo a la implementación.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b2" aria-expanded="false" aria-controls="faq-p2"><span>¿Cuánto tiempo le lleva a mi equipo?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p2" role="region" aria-labelledby="faq-b2"><p>En el diagnóstico, 45 minutos con la dirección y dos entrevistas breves a personas de tu equipo. En la implementación, acordamos las sesiones al empezar, según los procesos elegidos.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b3" aria-expanded="false" aria-controls="faq-p3"><span>¿Tenemos que cambiar de herramientas?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p3" role="region" aria-labelledby="faq-b3"><p>No necesariamente. Partimos de las que ya usa tu equipo. Si alguna otra te simplifica el trabajo, te la proponemos y te explicamos por qué.</p></div></div>
+        <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" id="faq-b4" aria-expanded="false" aria-controls="faq-p4"><span>¿Trabajan en remoto?</span><span class="faq-ic" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-p4" role="region" aria-labelledby="faq-b4"><p>Sí. Trabajamos en remoto con empresas de distintos países y adaptamos las reuniones a los horarios de tu equipo.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 10b · CONTACTO -->
+  <!-- 7 · CONTACTO -->
   <section class="contacto" id="contacto">
     <div class="wrap">
       <div>
         <span class="eyebrow">[ Contacto ]</span>
         <h2 style="margin-top:16px">Cuéntanos<br><span class="hl"><span class="br">[</span>tu caso<span class="br">]</span></span></h2>
-        <p class="lead">Coordinemos una llamada de 20 minutos para conocer tu empresa y explorar cómo podemos ayudarte.</p>
+        <p class="lead">En una llamada de 20 minutos hablamos de cómo trabaja tu equipo y qué te gustaría resolver. Si podemos ayudarte, te enviamos una propuesta con el alcance, el plazo y el precio.</p>
         <p class="mail-line">O escríbenos a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a></p>
       </div>
-      <!-- El formulario envía a Google Sheets (Apps Script). WhatsApp retirado hasta que esté configurado. -->
       <form class="form" id="contact-form" novalidate>
-        <fieldset>
-          <legend>¿Qué te interesa? <span class="opt-note" style="font-weight:400;color:var(--muted);font-size:.88rem">(opcional)</span></legend>
-          <div class="opts" id="int-opts">
-            <label class="opt"><input type="radio" name="interes" value="Seiri Audit" id="i-audit"><span><em>Audit</em></span></label>
-            <label class="opt"><input type="radio" name="interes" value="Seiri Method" id="i-method"><span><em>Method</em></span></label>
-            <label class="opt"><input type="radio" name="interes" value="Seiri Sprint" id="i-sprint"><span><em>Sprint</em></span></label>
-            <label class="opt"><input type="radio" name="interes" value="Todavía no lo sé" id="i-nose"><span>Todavía no lo sé</span></label>
-          </div>
-        </fieldset>
+        <input type="hidden" id="f-interes" value="">
         <div class="row2">
           <div class="field"><label class="lb" for="f-name">Nombre</label><input id="f-name" type="text" autocomplete="name" required></div>
           <div class="field"><label class="lb" for="f-email">Email</label><input id="f-email" type="email" autocomplete="email" inputmode="email" required></div>
@@ -1000,16 +1038,13 @@ p{margin:0}
           <div class="field"><label class="lb" for="f-company">Empresa</label><input id="f-company" type="text" autocomplete="organization" required></div>
           <div class="field"><label class="lb" for="f-size">Tamaño del equipo</label><select id="f-size" required><option value="">Elige una opción</option><option>Menos de 4</option><option>De 4 a 10</option><option>De 11 a 20</option><option>Más de 20</option></select></div>
         </div>
-        <div class="field"><label class="lb" for="f-msg">¿Qué te gustaría resolver?</label><p class="help" id="f-msg-help">Cuéntanos en dos o tres frases cómo trabaja hoy tu equipo y qué te gustaría cambiar.</p><textarea id="f-msg" aria-describedby="f-msg-help" required></textarea></div>
+        <div class="field"><label class="lb" for="f-msg">¿Qué te gustaría que funcionara mejor en tu equipo?</label><textarea id="f-msg" required></textarea></div>
         <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que Seiri use mis datos para responder a mi consulta y coordinar una llamada.</span></label>
         <div class="hp" aria-hidden="true"><label for="f-web">No completes este campo</label><input type="text" id="f-web" name="web" tabindex="-1" autocomplete="off"></div>
         <p class="err" id="f-err" role="alert"></p>
-        <button class="btn btn-vino" type="submit" id="f-send" style="justify-self:start">Hablemos <span class="arr" aria-hidden="true">→</span></button>
+        <button class="btn btn-vino" type="submit" id="f-send" style="justify-self:start">Enviar consulta <span class="arr" aria-hidden="true">→</span></button>
         <details class="legal-note"><summary>Información básica sobre protección de datos</summary><p>Responsable: Melina Nathaly Martini Gache (Seiri). Finalidad: responder a tu consulta y coordinar una llamada. Base legal: tu consentimiento. Destinatarios: no cedemos tus datos a terceros; nuestros proveedores (Google, Cloudflare, Brevo y GitHub) los tratan por nuestra cuenta, y algunos lo hacen en EE.&nbsp;UU. con garantías adecuadas. Derechos: acceso, rectificación, supresión y otros, escribiendo a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Más información en la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p></details>
-        <div class="ready ok" id="f-ok" hidden tabindex="-1">
-          <b>¡Gracias! Recibimos tu mensaje.</b>
-          <p>Te escribiremos a <span id="f-ok-mail"></span> desde hola@seiri-studio.com para coordinar la llamada.</p>
-        </div>
+        <div class="ready ok" id="f-ok" hidden tabindex="-1"><b>¡Gracias! Recibimos tu mensaje.</b><p>Te escribiremos a <span id="f-ok-mail"></span> desde hola@seiri-studio.com para coordinar la llamada.</p></div>
         <div class="ready" id="f-ready" hidden tabindex="-1">
           <b>No pudimos enviar tu mensaje</b>
           <p>Puede ser un problema de conexión. Inténtalo de nuevo en unos minutos o escríbenos a <a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a>. Te dejamos el mensaje listo para copiar.</p>
@@ -1023,70 +1058,31 @@ p{margin:0}
 
 <footer class="footer">
   <div class="wrap">
-    <div class="f-grid">
-      <div><a class="logo" href="#inicio"><span class="b">[</span>SEIRI<span class="b">]</span></a><p class="tagline">Estudio de gestión estratégica y operativa.</p>
-      </div>
-      <div><h4>Seiri</h4><ul><li><a href="#proceso">Proceso</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre">Sobre Seiri</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
-      <div><h4>Contacto</h4><ul><li><a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a></li><li><a href="#contacto">Formulario de contacto</a></li><!-- PENDIENTE: volver a sumar WhatsApp cuando esté configurado. --></ul></div>
+    <div class="f-row">
+      <a class="logo" href="#inicio"><span class="b">[</span>SEIRI<span class="b">]</span></a>
+      <ul class="f-links">
+        <li><a href="mailto:hola@seiri-studio.com">hola@seiri-studio.com</a></li>
+        <li><a href="https://www.linkedin.com/company/seiri-studio-es/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>Sevilla, España</li>
+      </ul>
     </div>
-    <div class="legal"><span>© 2026 Seiri · Desde España al mundo</span><span><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span></div>
+    <div class="legal"><span>© 2026 Seiri</span><span><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></span></div>
   </div>
 </footer>
-
 
 <script>
 (function(){
   const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const WA = '34634418863';
-  const WA_DEFAULT = 'Hola, Seiri. Me gustaría coordinar una llamada y contar cómo trabaja mi empresa.';
-  const waURL = t => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
-  $$('.wa-link').forEach(a => a.href = waURL(WA_DEFAULT));
 
   /* Menú móvil */
   const mb = $('#menu-btn'), mp = $('#mobile-panel');
   mb.addEventListener('click', () => { const o = mp.hidden; mp.hidden = !o; mb.setAttribute('aria-expanded', String(o)); });
   $$('#mobile-panel a').forEach(a => a.addEventListener('click', () => { mp.hidden = true; mb.setAttribute('aria-expanded','false'); }));
 
-  /* Ir a un ancla al cargar */
-  function route(){ const h = location.hash.replace('#',''); if (h){ const el = document.getElementById(h); if (el) requestAnimationFrame(() => el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'})); } updateNav(); }
-  addEventListener('hashchange', route);
-
-  /* Sub-navegación por secciones: Proceso, Servicios y Contacto */
-  const unav = $('#unav'), secs = ['proceso','servicios','contacto'].map(id => document.getElementById(id));
-  function updateNav(){
-    const y = innerHeight * 0.35; let cur = null;
-    secs.forEach(s => { const r = s.getBoundingClientRect(); if (r.top < y && r.bottom > y) cur = s.id; });
-    const top = secs[0].getBoundingClientRect().top, bottom = secs[2].getBoundingClientRect().bottom;
-    unav.classList.toggle('show', top < y && bottom > y);
-    $$('#unav a').forEach(a => a.setAttribute('aria-current', String(a.dataset.u === cur)));
-  }
-  addEventListener('scroll', updateNav, {passive:true});
-
-  /* Resaltar servicios */
-  const grid = $('#svc-grid');
-  function highlight(ids){
-    $$('#svc-grid .card').forEach(c => c.classList.toggle('pick', ids.includes(c.id)));
-    grid.classList.toggle('has-pick', ids.length > 0);
-  }
-  const NAMES = {'svc-audit':'Seiri Audit','svc-method':'Seiri Method','svc-sprint':'Seiri Sprint'};
-  $$('.g-pill').forEach(b => b.addEventListener('click', () => {
-    const on = b.getAttribute('aria-pressed') !== 'true';
-    $$('.g-pill').forEach(x => x.setAttribute('aria-pressed', String(x === b && on)));
-    const ids = on ? b.dataset.show.split(' ') : [];
-    highlight(ids);
-    $('#g-res').innerHTML = on ? 'Te recomendamos: ' + ids.map(i => '<b>' + NAMES[i] + '</b>').join(', y después ') + '.' : '';
-  }));
-  $$('[data-goto]').forEach(b => b.addEventListener('click', () => {
-    const el = document.getElementById(b.dataset.goto); if (!el) return;
-    $$('.g-pill').forEach(x => x.setAttribute('aria-pressed','false')); if ($('#g-res')) $('#g-res').textContent = '';
-    highlight([el.id]);
-    el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
-  }));
-
-  /* Botones de servicio: abren el formulario con el servicio elegido */
+  /* Botones de servicio: llevan al formulario y anotan el servicio elegido */
   $$('[data-pick]').forEach(a => a.addEventListener('click', () => {
-    const r = $$('input[name="interes"]').find(x => x.value === a.dataset.pick); if (r) r.checked = true;
+    $('#f-interes').value = a.dataset.pick;
     setTimeout(() => $('#f-name').focus({preventScroll:true}), reduce ? 0 : 600);
   }));
 
@@ -1096,28 +1092,25 @@ p{margin:0}
     e.preventDefault();
     const err = $('#f-err'); err.textContent = '';
     const v = id => $('#' + id).value.trim();
-    const interes = ($$('input[name="interes"]').find(x => x.checked) || {}).value || '';
+    const interes = v('f-interes');
     const checks = [
       ['f-name', v('f-name'), 'Escribe tu nombre para saber cómo dirigirnos a ti.'],
       ['f-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('f-email')), 'Revisa tu email. Debe tener un formato como nombre@correo.com.'],
       ['f-company', v('f-company'), 'Escribe el nombre de tu empresa.'],
       ['f-size', v('f-size'), 'Elige el tamaño de tu equipo.'],
-      ['f-msg', v('f-msg'), 'Cuéntanos qué te gustaría resolver.'],
+      ['f-msg', v('f-msg'), 'Cuéntanos qué te gustaría que funcionara mejor en tu equipo.'],
       ['f-consent', $('#f-consent').checked, 'Marca la casilla para confirmar que has leído la política de privacidad.']
     ];
     const bad = checks.find(c => !c[1]);
     if (bad){ err.textContent = bad[2]; $('#' + bad[0]).focus(); return; }
+    if ($('#f-web').value) return;
     const text = 'Hola, Seiri. Me gustaría coordinar una llamada de 20 minutos.\n\n' +
       (interes ? 'Me interesa: ' + interes + '\n' : '') +
       'Empresa: ' + v('f-company') + ' · Equipo: ' + v('f-size') + '\n\n' + v('f-msg') + '\n\n' + v('f-name') + ' · ' + v('f-email');
-    if ($('#f-web').value) return; // campo trampa: solo lo completan los robots
     const btn = $('#f-send'), btnHTML = btn.innerHTML;
     btn.disabled = true; btn.textContent = 'Enviando…';
     $('#f-ok').hidden = true; $('#f-ready').hidden = true;
-    const data = new URLSearchParams({
-      nombre: v('f-name'), email: v('f-email'), empresa: v('f-company'), equipo: v('f-size'),
-      interes: interes, mensaje: v('f-msg'), consentimiento: 'si', web: ''
-    });
+    const data = new URLSearchParams({ nombre: v('f-name'), email: v('f-email'), empresa: v('f-company'), equipo: v('f-size'), interes: interes, mensaje: v('f-msg'), consentimiento: 'si', web: '' });
     const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 20000);
     const fail = () => {
       $('#f-preview').textContent = text;
@@ -1126,12 +1119,7 @@ p{margin:0}
     };
     fetch(FORM_URL, { method: 'POST', body: data, signal: ctrl.signal })
       .then(r => r.json())
-      .then(res => {
-        if (!res || !res.ok) throw new Error('respuesta');
-        $('#f-ok-mail').textContent = v('f-email');
-        $('#contact-form').reset();
-        $('#f-ok').hidden = false; $('#f-ok').focus();
-      })
+      .then(res => { if (!res || !res.ok) throw new Error('respuesta'); $('#f-ok-mail').textContent = v('f-email'); $('#contact-form').reset(); $('#f-ok').hidden = false; $('#f-ok').focus(); })
       .catch(fail)
       .finally(() => { clearTimeout(timer); btn.disabled = false; btn.innerHTML = btnHTML; });
   });
@@ -1141,21 +1129,12 @@ p{margin:0}
     try { navigator.clipboard.writeText($('#f-preview').textContent).then(done).catch(fallback); } catch(_){ fallback(); }
   });
 
-
-  /* Servicios: «Qué incluye» se abre en las tres tarjetas a la vez para comparar */
-  $$('.c-more').forEach(btn => btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') !== 'true';
-    $$('.c-more').forEach(x => { x.setAttribute('aria-expanded', String(open)); document.getElementById(x.getAttribute('aria-controls')).hidden = !open; });
-  }));
-
   /* Preguntas frecuentes: acordeón accesible */
   $$('.faq-btn').forEach(btn => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));
     panel.hidden = true;
     btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!open)); panel.hidden = open; });
   });
-
-  route();
 })();
 </script>
 </body>
